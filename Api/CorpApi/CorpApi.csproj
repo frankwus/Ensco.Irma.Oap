@@ -1,0 +1,649 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\packages\Microsoft.Net.Compilers.2.8.2\build\Microsoft.Net.Compilers.props" Condition="Exists('..\..\packages\Microsoft.Net.Compilers.2.8.2\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B805CDC2-F6E5-4AB7-BCC2-F554A76F1DCA}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ensco.Irma.Oap.Api.Corp</RootNamespace>
+    <AssemblyName>Ensco.Irma.Oap.Api.Corp</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication>disabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>enabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=7.0.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\AutoMapper.7.0.1\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="MediatR, Version=5.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MediatR.5.0.1\lib\net45\MediatR.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Owin.4.0.0\lib\net451\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Cors, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Owin.Cors.4.0.0\lib\net451\Microsoft.Owin.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.FileSystems, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Owin.FileSystems.3.0.1\lib\net45\Microsoft.Owin.FileSystems.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Owin.Host.SystemWeb.4.0.0\lib\net451\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Hosting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Owin.Hosting.4.0.0\lib\net451\Microsoft.Owin.Hosting.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Owin.Security.4.0.0\lib\net451\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Owin.Security.Cookies.4.0.0\lib\net451\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Owin.Security.OAuth.4.0.0\lib\net451\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.StaticFiles, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Owin.StaticFiles.3.0.1\lib\net45\Microsoft.Owin.StaticFiles.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Testing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Owin.Testing.4.0.0\lib\net451\Microsoft.Owin.Testing.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NJsonSchema, Version=9.10.66.0, Culture=neutral, PublicKeyToken=c2f9c3bdfae56102, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\NJsonSchema.9.10.66\lib\net45\NJsonSchema.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="SimpleInjector, Version=4.3.0.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SimpleInjector.4.3.0\lib\net45\SimpleInjector.dll</HintPath>
+    </Reference>
+    <Reference Include="SimpleInjector.Integration.WebApi, Version=4.3.0.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SimpleInjector.Integration.WebApi.4.3.0\lib\net45\SimpleInjector.Integration.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Swashbuckle.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cd1bb07a5ac7c7bc, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Swashbuckle.Core.5.6.0\lib\net40\Swashbuckle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Activities" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Client.5.2.6\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Cors, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.Cors.5.2.6\lib\net45\System.Web.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Core.5.2.6\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Owin, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Owin.5.2.6\lib\net45\System.Web.Http.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.6\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\WebActivatorEx.2.2.0\lib\net40\WebActivatorEx.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Global.asax" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\CorpSwaggerConfig.cs" />
+    <Compile Include="Commands\OapAudit\AuditProtocol\AddProtocolsRequest.cs" />
+    <Compile Include="Commands\OapAudit\AuditProtocol\GetChecklistsForReviewRequest.cs" />
+    <Compile Include="Commands\OapAudit\AuditProtocol\DeleteProtocolAssessorRequest.cs" />
+    <Compile Include="Commands\OapAudit\AuditProtocol\AddProtocolAssessorRequest.cs" />
+    <Compile Include="Commands\OapAudit\AuditProtocol\AddAuditProtocolRequest.cs" />
+    <Compile Include="Commands\OapAudit\AuditProtocol\GetCompleteProtocolRequest.cs" />
+    <Compile Include="Commands\OapAudit\AuditProtocol\GetAuditProtocolsRequest.cs" />
+    <Compile Include="Commands\Checklist\Reviewer\AddChecklistReviewerRequest.cs" />
+    <Compile Include="Commands\Checklist\Reviewer\DeleteChecklistReviewerRequest.cs" />
+    <Compile Include="Commands\Checklist\Reviewer\GetAllChecklistReviewerRequest.cs" />
+    <Compile Include="Commands\Checklist\Reviewer\GetChecklistReviewerRequest.cs" />
+    <Compile Include="Commands\Checklist\Reviewer\UpdateChecklistReviewerRequest.cs" />
+    <Compile Include="Commands\Checklist\Accountable\GetAccountablesByPositionIdsRequest.cs" />
+    <Compile Include="Commands\Checklist\Accountable\GetAllAccountablesRequest.cs" />
+    <Compile Include="Commands\Checklist\SubSystem\AddSubSystemRequest.cs" />
+    <Compile Include="Commands\Checklist\SubSystem\DeleteSubSystemRequest.cs" />
+    <Compile Include="Commands\Checklist\SubSystem\GetAllSubSystemRequest.cs" />
+    <Compile Include="Commands\Checklist\SubSystem\UpdateSubSystemRequest.cs" />
+    <Compile Include="Commands\Checklist\Equipment\AddEquipmentRequest.cs" />
+    <Compile Include="Commands\Checklist\Equipment\DeleteEquipmentRequest.cs" />
+    <Compile Include="Commands\Checklist\Equipment\GetAllEquipmentRequest.cs" />
+    <Compile Include="Commands\Checklist\Equipment\UpdateEquipmentRequest.cs" />
+    <Compile Include="Commands\Checklist\SystemGroup\AddSystemGroupRequest.cs" />
+    <Compile Include="Commands\Checklist\SystemGroup\DeleteSystemGroupRequest.cs" />
+    <Compile Include="Commands\Checklist\SystemGroup\GetAllSystemGroupRequest.cs" />
+    <Compile Include="Commands\Checklist\SystemGroup\UpdateSystemGroupRequest.cs" />
+    <Compile Include="Commands\Checklist\WorkInstruction\AddWorkInstructionRequest.cs" />
+    <Compile Include="Commands\Checklist\WorkInstruction\DeleteWorkInstructionRequest.cs" />
+    <Compile Include="Commands\Checklist\WorkInstruction\GetAllWorkInstructionRequest.cs" />
+    <Compile Include="Commands\Checklist\WorkInstruction\UpdateWorkInstructionRequest.cs" />
+    <Compile Include="Commands\Checklist\System\AddSystemRequest.cs" />
+    <Compile Include="Commands\Checklist\System\DeleteSystemRequest.cs" />
+    <Compile Include="Commands\Checklist\System\GetAllSystemRequest.cs" />
+    <Compile Include="Commands\Checklist\System\UpdateSystemRequest.cs" />
+    <Compile Include="Commands\Checklist\ChecklistWorkInstruction\AddChecklistWorkInstructionRequest.cs" />
+    <Compile Include="Commands\Checklist\ChecklistWorkInstruction\DeleteChecklistWorkInstructionRequest.cs" />
+    <Compile Include="Commands\Checklist\ChecklistWorkInstruction\GetAllChecklistWorkInstructionRequest.cs" />
+    <Compile Include="Commands\Checklist\ChecklistWorkInstruction\UpdateChecklistWorkInstructionRequest.cs" />
+    <Compile Include="Commands\Checklist\ChecklistEquipment\AddChecklistEquipmentRequest.cs" />
+    <Compile Include="Commands\Checklist\ChecklistEquipment\DeleteChecklistEquipmentRequest.cs" />
+    <Compile Include="Commands\Checklist\ChecklistEquipment\GetAllChecklistEquipmentRequest.cs" />
+    <Compile Include="Commands\Checklist\ChecklistEquipment\UpdateChecklistEquipmentRequest.cs" />
+    <Compile Include="Commands\Checklist\ChecklistGroup\AddChecklistGroupRequest.cs" />
+    <Compile Include="Commands\Checklist\ChecklistGroup\DeleteChecklistGroupRequest.cs" />
+    <Compile Include="Commands\Checklist\ChecklistGroup\GetAllChecklistGroupRequest.cs" />
+    <Compile Include="Commands\Checklist\ChecklistGroup\GetChecklistGroupRequest.cs" />
+    <Compile Include="Commands\Checklist\ChecklistGroup\UpdateChecklistGroupRequest.cs" />
+    <Compile Include="Commands\Checklist\ChecklistSubGroup\AddChecklistSubGroupRequest.cs" />
+    <Compile Include="Commands\Checklist\ChecklistSubGroup\DeleteChecklistSubGroupRequest.cs" />
+    <Compile Include="Commands\Checklist\ChecklistSubGroup\GetAllChecklistSubGroupRequest.cs" />
+    <Compile Include="Commands\Checklist\ChecklistSubGroup\GetChecklistSubGroupRequest.cs" />
+    <Compile Include="Commands\Checklist\ChecklistSubGroup\UpdateChecklistSubGroupRequest.cs" />
+    <Compile Include="Commands\Checklist\QuestionDataType\AddQuestionDataTypeRequest.cs" />
+    <Compile Include="Commands\Checklist\QuestionDataType\DeleteQuestionDataTypeRequest.cs" />
+    <Compile Include="Commands\Checklist\QuestionDataType\GetAllQuestionDataTypeRequest.cs" />
+    <Compile Include="Commands\Checklist\QuestionDataType\GetQuestionDataTypeRequest.cs" />
+    <Compile Include="Commands\Checklist\LayoutColumn\AddChecklistLayoutColumnRequest.cs" />
+    <Compile Include="Commands\Checklist\LayoutColumn\DeleteChecklistLayoutColumnRequest.cs" />
+    <Compile Include="Commands\Checklist\LayoutColumn\GetAllChecklistLayoutColumnRequest.cs" />
+    <Compile Include="Commands\Checklist\LayoutColumn\GetChecklistLayoutColumnRequest.cs" />
+    <Compile Include="Commands\Checklist\LayoutColumn\UpdateChecklistLayoutColumnRequest.cs" />
+    <Compile Include="Commands\Checklist\Layout\AddChecklistLayoutRequest.cs" />
+    <Compile Include="Commands\Checklist\Layout\DeleteChecklistLayoutRequest.cs" />
+    <Compile Include="Commands\Checklist\Layout\GetAllChecklistLayoutRequest.cs" />
+    <Compile Include="Commands\Checklist\Layout\GetChecklistLayoutRequest.cs" />
+    <Compile Include="Commands\Checklist\Layout\UpdateChecklistLayoutRequest.cs" />
+    <Compile Include="Commands\Checklist\ProtocolQuestionHeader\AddOapProtocolQuestionHeaderRequest.cs" />
+    <Compile Include="Commands\Checklist\ProtocolQuestionHeader\DeleteOapProtocolQuestionHeaderRequest.cs" />
+    <Compile Include="Commands\Checklist\ProtocolQuestionHeader\GetAllOapProtocolQuestionHeaderRequest.cs" />
+    <Compile Include="Commands\Checklist\ProtocolQuestionHeader\GetOapProtocolQuestionHeaderRequest.cs" />
+    <Compile Include="Commands\Checklist\Comment\AddChecklistCommentRequest.cs" />
+    <Compile Include="Commands\Checklist\Comment\DeleteChecklistCommentRequest.cs" />
+    <Compile Include="Commands\Checklist\Comment\GetAllChecklistCommentRequest.cs" />
+    <Compile Include="Commands\Checklist\Comment\GetChecklistCommentRequest.cs" />
+    <Compile Include="Commands\Checklist\Comment\UpdateChecklistCommentRequest.cs" />
+    <Compile Include="Commands\Checklist\FrequencyType\AddFrequencyTypeRequest.cs" />
+    <Compile Include="Commands\Checklist\FrequencyType\DeleteFrequencyTypeRequest.cs" />
+    <Compile Include="Commands\Checklist\FrequencyType\GetAllFrequencyTypeRequest.cs" />
+    <Compile Include="Commands\Checklist\FrequencyType\GetFrequencyTypeRequest.cs" />
+    <Compile Include="Commands\Checklist\FrequencyType\UpdateFrequencyTypeRequest.cs" />
+    <Compile Include="Commands\Checklist\Graphic\AddGraphicRequest.cs" />
+    <Compile Include="Commands\Checklist\Graphic\DeleteGraphicRequest.cs" />
+    <Compile Include="Commands\Checklist\Graphic\GetAllGraphicRequest.cs" />
+    <Compile Include="Commands\Checklist\Graphic\GetGraphicRequest.cs" />
+    <Compile Include="Commands\Checklist\Graphic\UpdateGraphicRequest.cs" />
+    <Compile Include="Commands\Checklist\Hierarchy\AddHierarchyRequest.cs" />
+    <Compile Include="Commands\Checklist\Hierarchy\DeleteHierarchyRequest.cs" />
+    <Compile Include="Commands\Checklist\Hierarchy\GetAllParentHierarchyRequest.cs" />
+    <Compile Include="Commands\Checklist\Hierarchy\GetAllHierarchyRequest.cs" />
+    <Compile Include="Commands\Checklist\Hierarchy\GetHierarchyRequest.cs" />
+    <Compile Include="Commands\Checklist\Hierarchy\UpdateHierarchyRequest.cs" />
+    <Compile Include="Commands\Checklist\ProtocolFormType\AddProtocolFormTypeRequest.cs" />
+    <Compile Include="Commands\Checklist\ProtocolFormType\DeleteProtocolFormTypeRequest.cs" />
+    <Compile Include="Commands\Checklist\ProtocolFormType\GetAllProtocolFormTypeRequest.cs" />
+    <Compile Include="Commands\Checklist\ProtocolFormType\GetProtocolFormTypeRequest.cs" />
+    <Compile Include="Commands\Checklist\ProtocolFormType\UpdateProtocolFormTypeRequest.cs" />
+    <Compile Include="Commands\Checklist\ProtocolQuestionHeader\UpdateOapProtocolQuestionHeaderRequest.cs" />
+    <Compile Include="Commands\Checklist\QuestionDataType\UpdateQuestionDataTypeRequest.cs" />
+    <Compile Include="Commands\Checklist\QuestionRelatedQuestionMap\AddQuestionRelatedQuestionMapRequest.cs" />
+    <Compile Include="Commands\Checklist\QuestionRelatedQuestionMap\DeleteQuestionRelatedQuestionMapRequest.cs" />
+    <Compile Include="Commands\Checklist\QuestionRelatedQuestionMap\GetAllQuestionRelatedQuestionMapRequest.cs" />
+    <Compile Include="Commands\Checklist\QuestionRelatedQuestionMap\UpdateQuestionRelatedQuestionMapRequest.cs" />
+    <Compile Include="Commands\Checklist\QuestionTagMap\AddQuestionTagMapRequest.cs" />
+    <Compile Include="Commands\Checklist\QuestionTagMap\DeleteQuestionTagMapRequest.cs" />
+    <Compile Include="Commands\Checklist\QuestionTagMap\GetAllTagMapsForQuestionRequest.cs" />
+    <Compile Include="Commands\Checklist\QuestionTagMap\GetAllQuestionTagMapRequest.cs" />
+    <Compile Include="Commands\Checklist\QuestionTagMap\GetQuestionTagMapRequest.cs" />
+    <Compile Include="Commands\Checklist\QuestionTagMap\UpdateQuestionTagMapRequest.cs" />
+    <Compile Include="Commands\Checklist\QuestionTag\AddQuestionTagRequest.cs" />
+    <Compile Include="Commands\Checklist\QuestionTag\DeleteQuestionTagRequest.cs" />
+    <Compile Include="Commands\Checklist\QuestionTag\GetAllQuestionTagRequest.cs" />
+    <Compile Include="Commands\Checklist\QuestionTag\GetQuestionTagRequest.cs" />
+    <Compile Include="Commands\Checklist\QuestionTag\UpdateQuestionTagRequest.cs" />
+    <Compile Include="Commands\Checklist\Question\GetAllProtocolQuestionRequest.cs" />
+    <Compile Include="Commands\Checklist\Question\UpdateChecklistQuestionRequest.cs" />
+    <Compile Include="Commands\Checklist\Topic\GetAllTopicRequest.cs" />
+    <Compile Include="Commands\OapAudit\AuditProtocol\GetRelatedQuestionSearchProtocolRequest.cs" />
+    <Compile Include="Commands\OapAudit\AuditProtocol\UpdateAuditProtocolRequest.cs" />
+    <Compile Include="Commands\OapAudit\AuditProtocol\UpdateProtocolAnswerRequest.cs" />
+    <Compile Include="Commands\OapAudit\GetAllByStatusRequest.cs" />
+    <Compile Include="Commands\OapAudit\GetOapAuditRequest.cs" />
+    <Compile Include="Commands\OapAudit\OapAuditRequest.cs" />
+    <Compile Include="Commands\OapAudit\UpdateOapAuditRequest.cs" />
+    <Compile Include="Commands\OapAudit\ValidateOapAuditRequest.cs" />
+    <Compile Include="Commands\OapAudit\WorkFlow\ProcessOapAuditWorkFlowRequest.cs" />
+    <Compile Include="Commands\OapAudit\WorkFlow\StartOapAuditWorkFlowRequest.cs" />
+    <Compile Include="Controllers\Oap\checklist\OapAccountableController.cs" />
+    <Compile Include="Controllers\Oap\checklist\OapAuditProtocolController.cs" />
+    <Compile Include="Controllers\Oap\checklist\OapChecklistEquipmentController.cs" />
+    <Compile Include="Controllers\Oap\checklist\OapEquipmentController.cs" />
+    <Compile Include="Controllers\Oap\checklist\OapSystemController.cs" />
+    <Compile Include="Controllers\Oap\checklist\OapSubSystemController.cs" />
+    <Compile Include="Controllers\Oap\checklist\OapSystemGroupController.cs" />
+    <Compile Include="Controllers\Oap\checklist\OapWorkInstructionController.cs" />
+    <Compile Include="Controllers\Oap\checklist\OapChecklistWorkInstructionController.cs" />
+    <Compile Include="Controllers\Oap\checklist\OapChecklistLayoutColumnController.cs" />
+    <Compile Include="Controllers\Oap\checklist\OapChecklistLayoutController.cs" />
+    <Compile Include="Controllers\Oap\checklist\OapChecklistQuestionTagController.cs" />
+    <Compile Include="Controllers\Oap\checklist\OapChecklistQuestionRelatedQuestionMapController.cs" />
+    <Compile Include="Controllers\Oap\checklist\OapChecklistQuestionTagMapController.cs" />
+    <Compile Include="Controllers\Oap\checklist\OapChecklistQuestionDataTypeController.cs" />
+    <Compile Include="Controllers\Oap\checklist\OapProtocolQuestionHeaderController.cs" />
+    <Compile Include="Controllers\Oap\checklist\OapChecklistSubGroupController.cs" />
+    <Compile Include="Controllers\Oap\checklist\OapChecklistGroupController.cs" />
+    <Compile Include="Controllers\Oap\checklist\OapChecklistQuestionController.cs" />
+    <Compile Include="Controllers\Oap\checklist\OapChecklistTopicController.cs" />
+    <Compile Include="Controllers\Oap\checklist\OapChecklistCommentController.cs" />
+    <Compile Include="Controllers\Oap\checklist\OapGraphicController.cs" />
+    <Compile Include="Controllers\Oap\checklist\OapProtocolFormTypeController.cs" />
+    <Compile Include="Controllers\Oap\checklist\OapFrequencyTypeController.cs" />
+    <Compile Include="Controllers\Oap\checklist\OapHierarchyController.cs" />
+    <Compile Include="Controllers\Oap\OapAudits\OapAuditController.cs" />
+    <Compile Include="Controllers\Oap\OapAudits\OapAuditWorkFlowController.cs" />
+    <Compile Include="Handlers\Checklist\Accountable\GetAccountablesByPositionIdsHandler.cs" />
+    <Compile Include="Handlers\Checklist\Accountable\GetAllAccountablesHandler.cs" />
+    <Compile Include="Handlers\OapAudit\AuditProtocol\AddProtocolsHandler.cs" />
+    <Compile Include="Handlers\OapAudit\AuditProtocol\GetChecklistsForReviewHandler.cs" />
+    <Compile Include="Handlers\OapAudit\AuditProtocol\DeleteProtocolAssessorHandler.cs" />
+    <Compile Include="Handlers\OapAudit\AuditProtocol\AddProtocolAssessorHandler.cs" />
+    <Compile Include="Handlers\OapAudit\AuditProtocol\GetCompleteProtocolHandler.cs" />
+    <Compile Include="Handlers\OapAudit\AuditProtocol\AddAuditProtocolHandler.cs" />
+    <Compile Include="Handlers\OapAudit\AuditProtocol\GetAuditProtocolsHandler.cs" />
+    <Compile Include="Handlers\Checklist\ChecklistWorkInstruction\AddChecklistWorkInstructionHandler.cs" />
+    <Compile Include="Handlers\Checklist\ChecklistWorkInstruction\DeleteChecklistWorkInstructionHandler.cs" />
+    <Compile Include="Handlers\Checklist\ChecklistWorkInstruction\GetAllChecklistWorkInstructionHandler.cs" />
+    <Compile Include="Handlers\Checklist\ChecklistWorkInstruction\UpdateChecklistWorkInstructionHandler.cs" />
+    <Compile Include="Handlers\Checklist\ChecklistGroup\AddChecklistGroupHandler.cs" />
+    <Compile Include="Handlers\Checklist\ChecklistGroup\DeleteChecklistGroupHandler.cs" />
+    <Compile Include="Handlers\Checklist\ChecklistGroup\GetAllChecklistGroupHandler.cs" />
+    <Compile Include="Handlers\Checklist\ChecklistGroup\GetChecklistGroupHandler.cs" />
+    <Compile Include="Handlers\Checklist\ChecklistGroup\UpdateChecklistGroupHandler.cs" />
+    <Compile Include="Handlers\Checklist\ChecklistSubGroup\AddChecklistSubGroupHandler.cs" />
+    <Compile Include="Handlers\Checklist\ChecklistSubGroup\DeleteChecklistSubGroupHandler.cs" />
+    <Compile Include="Handlers\Checklist\ChecklistSubGroup\GetAllChecklistSubGroupHandler.cs" />
+    <Compile Include="Handlers\Checklist\ChecklistSubGroup\GetChecklistSubGroupHandler.cs" />
+    <Compile Include="Handlers\Checklist\ChecklistSubGroup\UpdateChecklistSubGroupHandler.cs" />
+    <Compile Include="Handlers\Checklist\Reviewer\AddChecklistReviewerHandler.cs" />
+    <Compile Include="Handlers\Checklist\Reviewer\DeleteChecklistReviewerHandler.cs" />
+    <Compile Include="Handlers\Checklist\Reviewer\GetAllChecklistReviewerHandler.cs" />
+    <Compile Include="Handlers\Checklist\Reviewer\GetChecklistReviewerHandler.cs" />
+    <Compile Include="Handlers\Checklist\QuestionDataType\AddQuestionDataTypeHandler.cs" />
+    <Compile Include="Handlers\Checklist\QuestionDataType\DeleteQuestionDataTypeHandler.cs" />
+    <Compile Include="Handlers\Checklist\QuestionDataType\GetAllQuestionDataTypeHandler.cs" />
+    <Compile Include="Handlers\Checklist\QuestionDataType\GetQuestionDataTypeHandler.cs" />
+    <Compile Include="Handlers\Checklist\LayoutColumn\AddChecklistLayoutColumnHandler.cs" />
+    <Compile Include="Handlers\Checklist\LayoutColumn\DeleteChecklistLayoutColumnHandler.cs" />
+    <Compile Include="Handlers\Checklist\LayoutColumn\GetAllChecklistLayoutColumnHandler.cs" />
+    <Compile Include="Handlers\Checklist\LayoutColumn\GetChecklistLayoutColumnHandler.cs" />
+    <Compile Include="Handlers\Checklist\LayoutColumn\UpdateChecklistLayoutColumnHandler.cs" />
+    <Compile Include="Handlers\Checklist\Layout\AddChecklistLayoutHandler.cs" />
+    <Compile Include="Handlers\Checklist\Layout\DeleteChecklistLayoutHandler.cs" />
+    <Compile Include="Handlers\Checklist\Layout\GetAllChecklistLayoutHandler.cs" />
+    <Compile Include="Handlers\Checklist\Layout\GetChecklistLayoutHandler.cs" />
+    <Compile Include="Handlers\Checklist\Comment\AddChecklistCommentHandler.cs" />
+    <Compile Include="Handlers\Checklist\Comment\DeleteChecklistCommentHandler.cs" />
+    <Compile Include="Handlers\Checklist\Comment\GetAllChecklistCommentHandler.cs" />
+    <Compile Include="Handlers\Checklist\Comment\GetChecklistCommentHandler.cs" />
+    <Compile Include="Handlers\Checklist\Comment\UpdateChecklistCommentHandler.cs" />
+    <Compile Include="Handlers\Checklist\FrequencyType\AddFrequencyTypeHandler.cs" />
+    <Compile Include="Handlers\Checklist\FrequencyType\DeleteFrequencyTypeHandler.cs" />
+    <Compile Include="Handlers\Checklist\FrequencyType\GetAllFrequencyTypeHandler.cs" />
+    <Compile Include="Handlers\Checklist\FrequencyType\GetFrequencyTypeHandler.cs" />
+    <Compile Include="Handlers\Checklist\FrequencyType\UpdateFrequencyTypeHandler.cs" />
+    <Compile Include="Handlers\Checklist\Graphic\AddGraphicHandler.cs" />
+    <Compile Include="Handlers\Checklist\Graphic\DeleteGraphicHandler.cs" />
+    <Compile Include="Handlers\Checklist\Graphic\GetAllGraphicHandler.cs" />
+    <Compile Include="Handlers\Checklist\Graphic\GetGraphicHandler.cs" />
+    <Compile Include="Handlers\Checklist\Graphic\UpdateGraphicHandler.cs" />
+    <Compile Include="Handlers\Checklist\Hierarchy\AddHierarchyHandler.cs" />
+    <Compile Include="Handlers\Checklist\Hierarchy\DeleteHierarchyHandler.cs" />
+    <Compile Include="Handlers\Checklist\Hierarchy\GetAllParentHierarchyHandler.cs" />
+    <Compile Include="Handlers\Checklist\Hierarchy\GetAllHierarchyHandler.cs" />
+    <Compile Include="Handlers\Checklist\Hierarchy\GetHierarchyHandler.cs" />
+    <Compile Include="Handlers\Checklist\Hierarchy\UpdateHierarchyHandler.cs" />
+    <Compile Include="Commands\Checklist\Question\AddChecklistQuestionRequest.cs" />
+    <Compile Include="Commands\Checklist\Question\DeleteChecklistSubTopicRequest.cs" />
+    <Compile Include="Commands\Checklist\Question\GetAllSubGroupQuestionRequest.cs" />
+    <Compile Include="Commands\Checklist\Question\GetAllTopicQuestionRequest.cs" />
+    <Compile Include="Commands\Checklist\Question\GetAllChecklistQuestionRequest.cs" />
+    <Compile Include="Commands\Checklist\Question\GetChecklistQuestionRequest.cs" />
+    <Compile Include="Commands\Checklist\Topic\AddChecklistTopicRequest.cs" />
+    <Compile Include="Commands\Checklist\Topic\DeleteChecklistTopicRequest.cs" />
+    <Compile Include="Commands\Checklist\Topic\GetAllGroupTopicRequest.cs" />
+    <Compile Include="Commands\Checklist\Topic\GetAllChecklistTopicRequest.cs" />
+    <Compile Include="Commands\Checklist\Topic\GetChecklistTopicRequest.cs" />
+    <Compile Include="Commands\Checklist\Topic\UpdateChecklistTopicRequest.cs" />
+    <Compile Include="Handlers\Checklist\Layout\UpdateChecklistLayoutHandler.cs" />
+    <Compile Include="Handlers\Checklist\ProtocolFormType\AddProtocolFormTypeHandler.cs" />
+    <Compile Include="Handlers\Checklist\ProtocolFormType\DeleteProtocolFormTypeHandler.cs" />
+    <Compile Include="Handlers\Checklist\ProtocolFormType\GetAllProtocolFormTypeHandler.cs" />
+    <Compile Include="Handlers\Checklist\ProtocolFormType\GetProtocolFormTypeHandler.cs" />
+    <Compile Include="Handlers\Checklist\ProtocolFormType\UpdateProtocolFormTypeHandler.cs" />
+    <Compile Include="Handlers\Checklist\ProtocolQuestionHeader\AddOapProtocolQuestionHeaderHandler.cs" />
+    <Compile Include="Handlers\Checklist\ProtocolQuestionHeader\DeleteOapProtocolQuestionHeaderHandler.cs" />
+    <Compile Include="Handlers\Checklist\ProtocolQuestionHeader\GetAllOapProtocolQuestionHeaderHandler.cs" />
+    <Compile Include="Handlers\Checklist\ProtocolQuestionHeader\GetOapProtocolQuestionHeaderHandler.cs" />
+    <Compile Include="Handlers\Checklist\ProtocolQuestionHeader\UpdateOapProtocolQuestionHeaderHandler.cs" />
+    <Compile Include="Handlers\Checklist\ChecklistEquipment\AddChecklistEquipmentHandler.cs" />
+    <Compile Include="Handlers\Checklist\ChecklistEquipment\DeleteChecklistEquipmentHandler.cs" />
+    <Compile Include="Handlers\Checklist\ChecklistEquipment\GetAllChecklistEquipmentHandler.cs" />
+    <Compile Include="Handlers\Checklist\ChecklistEquipment\UpdateChecklistEquipmentHandler.cs" />
+    <Compile Include="Handlers\Checklist\Equipment\AddEquipmentHandler.cs" />
+    <Compile Include="Handlers\Checklist\Equipment\DeleteEquipmentHandler.cs" />
+    <Compile Include="Handlers\Checklist\Equipment\GetAllEquipmentHandler.cs" />
+    <Compile Include="Handlers\Checklist\Equipment\UpdateEquipmentHandler.cs" />
+    <Compile Include="Handlers\Checklist\QuestionDataType\UpdateQuestionDataTypeHandler.cs" />
+    <Compile Include="Handlers\Checklist\Reviewer\UpdateChecklistReviewerHandler.cs" />
+    <Compile Include="Handlers\Checklist\SystemGroup\AddSystemGroupHandler.cs" />
+    <Compile Include="Handlers\Checklist\SystemGroup\DeleteSystemGroupHandler.cs" />
+    <Compile Include="Handlers\Checklist\SystemGroup\GetAllSystemGroupHandler.cs" />
+    <Compile Include="Handlers\Checklist\SystemGroup\UpdateSystemGroupHandler.cs" />
+    <Compile Include="Handlers\Checklist\WorkInstruction\AddWorkInstructionHandler.cs" />
+    <Compile Include="Handlers\Checklist\WorkInstruction\DeleteWorkInstructionHandler.cs" />
+    <Compile Include="Handlers\Checklist\WorkInstruction\GetAllWorkInstructionHandler.cs" />
+    <Compile Include="Handlers\Checklist\WorkInstruction\UpdateWorkInstructionHandler.cs" />
+    <Compile Include="Handlers\Checklist\SubSystem\AddSubSystemHandler.cs" />
+    <Compile Include="Handlers\Checklist\SubSystem\DeleteSubSystemHandler.cs" />
+    <Compile Include="Handlers\Checklist\SubSystem\GetAllSubSystemHandler.cs" />
+    <Compile Include="Handlers\Checklist\SubSystem\UpdateSubSystemHandler.cs" />
+    <Compile Include="Handlers\Checklist\System\AddSystemHandler.cs" />
+    <Compile Include="Handlers\Checklist\System\DeleteSystemHandler.cs" />
+    <Compile Include="Handlers\Checklist\System\GetAllSystemHandler.cs" />
+    <Compile Include="Handlers\Checklist\System\UpdateSystemHandler.cs" />
+    <Compile Include="Handlers\Checklist\QuestionRelatedQuestionMap\AddQuestionRelatedQuestionMapHandler.cs" />
+    <Compile Include="Handlers\Checklist\QuestionRelatedQuestionMap\DeleteQuestionRelatedQuestionMapHandler.cs" />
+    <Compile Include="Handlers\Checklist\QuestionRelatedQuestionMap\GetAllQuestionRelatedQuestionMapHandler.cs" />
+    <Compile Include="Handlers\Checklist\QuestionRelatedQuestionMap\UpdateQuestionRelatedQuestionMapHandler.cs" />
+    <Compile Include="Handlers\Checklist\QuestionTagMap\AddQuestionTagMapHandler.cs" />
+    <Compile Include="Handlers\Checklist\QuestionTagMap\DeleteQuestionTagMapHandler.cs" />
+    <Compile Include="Handlers\Checklist\QuestionTagMap\GetAllTagMapsForQuestionHandler.cs" />
+    <Compile Include="Handlers\Checklist\QuestionTagMap\GetAllQuestionTagMapHandler.cs" />
+    <Compile Include="Handlers\Checklist\QuestionTagMap\GetQuestionTagMapHandler.cs" />
+    <Compile Include="Handlers\Checklist\QuestionTagMap\UpdateQuestionTagMapHandler.cs" />
+    <Compile Include="Handlers\Checklist\QuestionTag\AddQuestionTagHandler.cs" />
+    <Compile Include="Handlers\Checklist\QuestionTag\DeleteQuestionTagHandler.cs" />
+    <Compile Include="Handlers\Checklist\QuestionTag\GetAllQuestionTagHandler.cs" />
+    <Compile Include="Handlers\Checklist\QuestionTag\GetQuestionTagHandler.cs" />
+    <Compile Include="Handlers\Checklist\QuestionTag\UpdateQuestionTagHandler.cs" />
+    <Compile Include="Handlers\Checklist\Question\AddChecklistQuestionHandler.cs" />
+    <Compile Include="Handlers\Checklist\Question\DeleteChecklistQuestionHandler.cs" />
+    <Compile Include="Handlers\Checklist\Question\GetAllProtocolQuestionHandler.cs" />
+    <Compile Include="Handlers\Checklist\Question\GetAllChecklistQuestionHandler.cs" />
+    <Compile Include="Handlers\Checklist\Question\GetAllSubGroupQuestionHandler.cs" />
+    <Compile Include="Handlers\Checklist\Question\GetAllTopicQuestionHandler.cs" />
+    <Compile Include="Handlers\Checklist\Question\GetChecklistQuestionHandler.cs" />
+    <Compile Include="Handlers\Checklist\Question\UpdateChecklistQuestionHandler.cs" />
+    <Compile Include="Handlers\Checklist\Topic\GetAllTopicHandler.cs" />
+    <Compile Include="Handlers\OapAudit\AddOapAuditHandler.cs" />
+    <Compile Include="Handlers\OapAudit\AuditProtocol\GetRelatedQuestionSearchProtocolHandler.cs" />
+    <Compile Include="Handlers\OapAudit\AuditProtocol\UpdateAuditProtocolHandler.cs" />
+    <Compile Include="Handlers\OapAudit\AuditProtocol\UpdateProtocolAnswerHandler.cs" />
+    <Compile Include="Handlers\OapAudit\GetAllAuditsHandler.cs" />
+    <Compile Include="Handlers\OapAudit\GetOapAuditHandler.cs" />
+    <Compile Include="Handlers\OapAudit\ProcessOapAuditWorkFlowHandler.cs" />
+    <Compile Include="Handlers\OapAudit\StartOapAuditWorkFlowHandler.cs" />
+    <Compile Include="Handlers\OapAudit\UpdateOapAuditHandler.cs" />
+    <Compile Include="Handlers\OapAudit\ValidateOapAuditHandler.cs" />
+    <Compile Include="Models\ProcessOapAuditWorkFlow.cs" />
+    <Compile Include="Models\StartOapAuditWorkFlow.cs" />
+    <Compile Include="Profiles\ChecklistProfile.cs" />
+    <Compile Include="Profiles\OapAuditProfile.cs" />
+    <Compile Include="Profiles\OapChecklistGroupProfile.cs" />
+    <Compile Include="Profiles\ChecklistWorkInstructionProfile.cs" />
+    <Compile Include="Profiles\ChecklistEquipmentProfile.cs" />
+    <Compile Include="Profiles\OapChecklistAssetDataManagementProfile.cs" />
+    <Compile Include="Profiles\OapChecklistQuestionProfile.cs" />
+    <Compile Include="Profiles\OapChecklistQuestionRelatedQuestionMapProfile.cs" />
+    <Compile Include="Profiles\OapChecklistQuestionTagMapProfile.cs" />
+    <Compile Include="Profiles\OapChecklistQuestionTagProfile.cs" />
+    <Compile Include="Profiles\OapChecklistSubGroupProfile.cs" />
+    <Compile Include="Profiles\OapChecklistTopicProfile.cs" />
+    <Compile Include="Profiles\OapFrequencyTypeProfile.cs" />
+    <Compile Include="Profiles\OapGraphicProfile.cs" />
+    <Compile Include="Profiles\OapHierarchyProfile.cs" />
+    <Compile Include="Profiles\OapProtocolFormTypeProfile.cs" />
+    <Compile Include="Profiles\OapProtocolQuestionHeaderProfile.cs" />
+    <Compile Include="Profiles\RIgOapChecklistCommentProfile.cs" />
+    <Compile Include="Profiles\RigOapChecklistProfile.cs" />
+    <Compile Include="Profiles\RigOapChecklistQuestionProfile.cs" />
+    <Compile Include="Profiles\RigOapQuestionAnswerProfile.cs" />
+    <Compile Include="Startup.cs" />
+    <Compile Include="App_Start\CorpWebApiConfig.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Handlers\Checklist\Topic\AddChecklistTopicHandler.cs" />
+    <Compile Include="Handlers\Checklist\Topic\DeleteChecklistTopicHandler.cs" />
+    <Compile Include="Handlers\Checklist\Topic\GetAllGroupTopicHandler.cs" />
+    <Compile Include="Handlers\Checklist\Topic\GetAllChecklistTopicHandler.cs" />
+    <Compile Include="Handlers\Checklist\Topic\GetChecklistTopicHandler.cs" />
+    <Compile Include="Handlers\Checklist\Topic\UpdateChecklistTopicHandler.cs" />
+    <Compile Include="LogTraceWriter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\CORP API UAT %28devweb02npz%29 .pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Web.CORP-API-UAT.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Business\Environment\Framework.csproj">
+      <Project>{a1e8e75c-3304-40e0-b08a-47ddfca8dcd4}</Project>
+      <Name>Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Business\Services\BusinessServices.csproj">
+      <Project>{68756816-8632-4B4C-B760-1968B1C31289}</Project>
+      <Name>BusinessServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Business\Workflow\WorkflowEngine.csproj">
+      <Project>{433cc126-cb25-4043-b2d8-de8c9e7f9f51}</Project>
+      <Name>WorkflowEngine</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Data\EfData.csproj">
+      <Project>{6449B522-3F17-43E6-8423-6C2DE0891C30}</Project>
+      <Name>EfData</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Domain\DomainModels.csproj">
+      <Project>{C7BC287E-6F9C-4393-B1AB-E3A74735E2F3}</Project>
+      <Name>DomainModels</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Interfaces\Data\DataInterfaces.csproj">
+      <Project>{C26FCFCE-A6CB-4D46-B236-C8C647800861}</Project>
+      <Name>DataInterfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Interfaces\Domain\DomainInterfaces.csproj">
+      <Project>{09E11CBD-8342-4F87-847F-0E239656DCA5}</Project>
+      <Name>DomainInterfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Interfaces\Services\ServiceInterfaces.csproj">
+      <Project>{14A6FFC0-8BCC-4B4D-BC74-3C9B25483664}</Project>
+      <Name>ServiceInterfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Logging\Logging.csproj">
+      <Project>{6F0BA0E3-FB90-4C18-B122-BC8DD1FCB39A}</Project>
+      <Name>Logging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Shared\Constants\ApiConstants.csproj">
+      <Project>{fa75858f-d857-4c2e-bc31-16768aed3f7e}</Project>
+      <Name>ApiConstants</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Shared\Extensions\Extensions.csproj">
+      <Project>{EDFCF717-F999-49E2-95A5-B96A88C00FCC}</Project>
+      <Name>Extensions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Shared\OwinSecurity\Common.csproj">
+      <Project>{2a5f56fc-c374-4072-8aa0-ffd9d38a7c66}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'UAT|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'RIG-API-UAT|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'CORP-API-UAT|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'RIG-API-DEV|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'R8505-RIG-API|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>57885</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:8081</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\..\packages\Microsoft.Net.Compilers.2.8.2\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.Net.Compilers.2.8.2\build\Microsoft.Net.Compilers.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

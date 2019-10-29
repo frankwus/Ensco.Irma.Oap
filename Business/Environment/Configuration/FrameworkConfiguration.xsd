@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="FrameworkConfiguration"
+    targetNamespace="http://tempuri.org/FrameworkConfiguration.xsd"
+    elementFormDefault="qualified"
+    xmlns="http://tempuri.org/FrameworkConfiguration.xsd"
+    xmlns:mstns="http://tempuri.org/FrameworkConfiguration.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+  <xs:element name="Framework" nillable="true"   type="tns:FrameworkConfiguration" />
+  <xs:complexType name="FrameworkConfiguration">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Data" type="tns:DataConfiguration"/> 
+    </xs:sequence>
+    <xs:attribute name="name" type="xs:string" use="required" /> 
+  </xs:complexType>
+  <xs:complexType name="DataConfiguration"> 
+    <xs:attribute name="server" type="xs:string" use="optional" />
+    <xs:attribute name="database" type="xs:string" use="optional" />
+    <xs:attribute name="username" type="xs:string" use="optional" />
+    <xs:attribute name="password" type="xs:string" use="optional" /> 
+    <xs:attribute name="commandTimeOut" type="xs:int" use="optional"/>
+  </xs:complexType>
+</xs:schema>

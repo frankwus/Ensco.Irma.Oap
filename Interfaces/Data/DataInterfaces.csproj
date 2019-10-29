@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C26FCFCE-A6CB-4D46-B236-C8C647800861}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ensco.Irma.Interfaces.Data</RootNamespace>
+    <AssemblyName>Ensco.Irma.Interfaces.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'UAT|AnyCPU'">
+    <OutputPath>bin\UAT\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'RIG-API-UAT|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\RIG-API-UAT\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'CORP-API-UAT|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\CORP-API-UAT\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'RIG-API-DEV|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\RIG-API-DEV\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'R8505-RIG-API|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\R8505-RIG-API\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\IAdminCustomRepository.cs" />
+    <Compile Include="Repositories\IBaseIdRepository.cs" />
+    <Compile Include="Repositories\IBaseRespository.cs" />
+    <Compile Include="Repositories\IFindingSubTypeRepository.cs" />
+    <Compile Include="Repositories\IIrmaCAPARepository.cs" />
+    <Compile Include="Repositories\IIrmaLookupRepository.cs" />
+    <Compile Include="Repositories\IIrmaReviewRepository.cs" />
+    <Compile Include="Repositories\IOapAuditProtocolMapRepository.cs" />
+    <Compile Include="Repositories\IOapAuditRepository.cs" />
+    <Compile Include="Repositories\IOapChecklistReviewerRepository.cs" />
+    <Compile Include="Repositories\IOapDPARepository.cs" />
+    <Compile Include="Repositories\IOapSystemGroupRepository.cs" />
+    <Compile Include="Repositories\IOapAccountableRepository.cs" />
+    <Compile Include="Repositories\IOapWorkInstructionRepository.cs" />
+    <Compile Include="Repositories\IOapEquipmentRepository.cs" />
+    <Compile Include="Repositories\IOapSubSystemRepository.cs" />
+    <Compile Include="Repositories\IOapSystemRepository.cs" />
+    <Compile Include="Repositories\IFindingTypeRepository.cs" />
+    <Compile Include="Repositories\IHistoricalBaseIdRepository.cs" />
+    <Compile Include="Repositories\IHistoricalBaseRepository.cs" />
+    <Compile Include="Repositories\IOapChecklistCommentRepository.cs" />
+    <Compile Include="Repositories\IOapChecklistAssetDataManagementRepository.cs" />
+    <Compile Include="Repositories\IOapChecklistEquipmentRepository.cs" />
+    <Compile Include="Repositories\IOapChecklistWorkInstructionRepository.cs" />
+    <Compile Include="Repositories\IOapChecklistGroupRepository.cs" />
+    <Compile Include="Repositories\IOapChecklistLayoutColumnRepository.cs" />
+    <Compile Include="Repositories\IOapChecklistLayoutRepository.cs" />
+    <Compile Include="Repositories\IOapChecklistQuestionDataTypeRepository.cs" />
+    <Compile Include="Repositories\IOapChecklistQuestionRepository.cs" />
+    <Compile Include="Repositories\IOapChecklistQuestionRelatedQuestionMapRepository.cs" />
+    <Compile Include="Repositories\IOapChecklistQuestionTagMapRepository.cs" />
+    <Compile Include="Repositories\IOapChecklistQuestionTagRepository.cs" />
+    <Compile Include="Repositories\IOapChecklistSubGroupRepository.cs" />
+    <Compile Include="Repositories\IOapFrequencyRepository.cs" />
+    <Compile Include="Repositories\IOapFrequencyTypeRepository.cs" />
+    <Compile Include="Repositories\IOapGraphicRepository.cs" />
+    <Compile Include="Repositories\IOapProtocolFormTypeRepository.cs" />
+    <Compile Include="Repositories\IOapProtocolQuestionHeaderRepository.cs" />
+    <Compile Include="Repositories\IPeopleRepository.cs" />
+    <Compile Include="Repositories\IOapChecklistTopicRepository.cs" />
+    <Compile Include="Repositories\IOapChecklistRepository.cs" />
+    <Compile Include="Repositories\IOpcHierarchyRepository.cs" />
+    <Compile Include="Repositories\IPobPersonnelRepository.cs" />
+    <Compile Include="Repositories\IRepositoryExecute.cs" />
+    <Compile Include="Repositories\IRepositoryRead.cs" />
+    <Compile Include="Repositories\IRespositoryWrite.cs" />
+    <Compile Include="Repositories\IRigOapChecklistAssessorRepository.cs" />
+    <Compile Include="Repositories\IRigOapChecklistGroupAssetRepository.cs" />
+    <Compile Include="Repositories\IRigOapChecklistQuestionAnswerRepository.cs" />
+    <Compile Include="Repositories\IRigOapChecklistQuestionCommentRepository.cs" />
+    <Compile Include="Repositories\IRigOapChecklistQuestionFindingRepository.cs" />
+    <Compile Include="Repositories\IRigOapChecklistQuestionNoAnswerCommentRepository.cs" />
+    <Compile Include="Repositories\IRigOapChecklistQuestionRepository.cs" />
+    <Compile Include="Repositories\IRigOapChecklistRepository.cs" />
+    <Compile Include="Repositories\IRigOapChecklistThirdPartyJobRepository.cs" />
+    <Compile Include="Repositories\IRigOapChecklistWorkInstructionRepository.cs" />
+    <Compile Include="Repositories\IRigRespository.cs" />
+    <Compile Include="Repositories\IIrmaTaskRepository.cs" />
+    <Compile Include="Repositories\IWorkflowInstanceActivityRepository.cs" />
+    <Compile Include="Repositories\IRigOapChecklistWorkflowRepository.cs" />
+    <Compile Include="Repositories\IWorkflowRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Domain\DomainModels.csproj">
+      <Project>{C7BC287E-6F9C-4393-B1AB-E3A74735E2F3}</Project>
+      <Name>DomainModels</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain\DomainInterfaces.csproj">
+      <Project>{09e11cbd-8342-4f87-847f-0e239656dca5}</Project>
+      <Name>DomainInterfaces</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

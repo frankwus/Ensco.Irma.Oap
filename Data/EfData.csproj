@@ -1,0 +1,488 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6449B522-3F17-43E6-8423-6C2DE0891C30}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ensco.Irma.Data</RootNamespace>
+    <AssemblyName>Ensco.Irma.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'UAT|AnyCPU'">
+    <OutputPath>bin\UAT\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'RIG-API-UAT|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\RIG-API-UAT\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'CORP-API-UAT|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\CORP-API-UAT\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'RIG-API-DEV|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\RIG-API-DEV\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'R8505-RIG-API|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\R8505-RIG-API\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Context\IExecuteSql.cs" />
+    <Compile Include="Context\IIrmaDbContext.cs" />
+    <Compile Include="Context\IIrmaOapDbContext.cs" />
+    <Compile Include="Context\IrmaDbContext.cs" />
+    <Compile Include="Context\IrmaOapDbContext.cs" />
+    <Compile Include="Conventions\OapTablePrefixConvention.cs" />
+    <Compile Include="Mappings\AdminCustomMap.cs" />
+    <Compile Include="Mappings\DPAMapping.cs" />
+    <Compile Include="Mappings\IrmaTaskMap.cs" />
+    <Compile Include="Mappings\OAPReviewMap.cs" />
+    <Compile Include="Mappings\PersonMap.cs" />
+    <Compile Include="Mappings\PobPersonnelMap.cs" />
+    <Compile Include="Mappings\RigOapChecklistQuestionMap.cs" />
+    <Compile Include="Migrations\201811151957513_AddFSOColumnsToRigOapChecklist.cs" />
+    <Compile Include="Migrations\201811151957513_AddFSOColumnsToRigOapChecklist.Designer.cs">
+      <DependentUpon>201811151957513_AddFSOColumnsToRigOapChecklist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811201835503_Added-Comment-Column-to-RigOapQuestion.cs" />
+    <Compile Include="Migrations\201811201835503_Added-Comment-Column-to-RigOapQuestion.Designer.cs">
+      <DependentUpon>201811201835503_Added-Comment-Column-to-RigOapQuestion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811232122416_OapHierarchyCode.cs" />
+    <Compile Include="Migrations\201811232122416_OapHierarchyCode.Designer.cs">
+      <DependentUpon>201811232122416_OapHierarchyCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812012156397_AddOapChecklistQuestionDataTypeAndFrequency.cs" />
+    <Compile Include="Migrations\201812012156397_AddOapChecklistQuestionDataTypeAndFrequency.Designer.cs">
+      <DependentUpon>201812012156397_AddOapChecklistQuestionDataTypeAndFrequency.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812022120005_RighChecklistAnswerValue_NotRequired.cs" />
+    <Compile Include="Migrations\201812022120005_RighChecklistAnswerValue_NotRequired.Designer.cs">
+      <DependentUpon>201812022120005_RighChecklistAnswerValue_NotRequired.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812051405003_RighChecklistQuestion_CriticalityDataTypeChange.cs" />
+    <Compile Include="Migrations\201812051405003_RighChecklistQuestion_CriticalityDataTypeChange.Designer.cs">
+      <DependentUpon>201812051405003_RighChecklistQuestion_CriticalityDataTypeChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812051433519_Added_ADM_WorkIngInstructions_Equiment_System_SubSystem_Model.cs" />
+    <Compile Include="Migrations\201812051433519_Added_ADM_WorkIngInstructions_Equiment_System_SubSystem_Model.Designer.cs">
+      <DependentUpon>201812051433519_Added_ADM_WorkIngInstructions_Equiment_System_SubSystem_Model.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812101531576_AddRighChecklistQuestionComment.cs" />
+    <Compile Include="Migrations\201812101531576_AddRighChecklistQuestionComment.Designer.cs">
+      <DependentUpon>201812101531576_AddRighChecklistQuestionComment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812141420016_ChangedRigOapChecklistFindingToRigOapChecklistQuestionFinding.cs" />
+    <Compile Include="Migrations\201812141420016_ChangedRigOapChecklistFindingToRigOapChecklistQuestionFinding.Designer.cs">
+      <DependentUpon>201812141420016_ChangedRigOapChecklistFindingToRigOapChecklistQuestionFinding.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901012152514_AddRigOapChecklistQuestionNoAnswerCommentAndFindingModifications.cs" />
+    <Compile Include="Migrations\201901012152514_AddRigOapChecklistQuestionNoAnswerCommentAndFindingModifications.Designer.cs">
+      <DependentUpon>201901012152514_AddRigOapChecklistQuestionNoAnswerCommentAndFindingModifications.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901101515583_ModifiedEditNoValueAndYesValueType_OAPChecklistQuestion.cs" />
+    <Compile Include="Migrations\201901101515583_ModifiedEditNoValueAndYesValueType_OAPChecklistQuestion.Designer.cs">
+      <DependentUpon>201901101515583_ModifiedEditNoValueAndYesValueType_OAPChecklistQuestion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901291709370_AddOapAccountablesTable.cs" />
+    <Compile Include="Migrations\201901291709370_AddOapAccountablesTable.Designer.cs">
+      <DependentUpon>201901291709370_AddOapAccountablesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901221934599_ChangesForRigChecklistDataAssetManagement.cs" />
+    <Compile Include="Migrations\201901221934599_ChangesForRigChecklistDataAssetManagement.Designer.cs">
+      <DependentUpon>201901221934599_ChangesForRigChecklistDataAssetManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901251410560_AddRigThirdPartyJobAndWorkInstructions.cs" />
+    <Compile Include="Migrations\201901251410560_AddRigThirdPartyJobAndWorkInstructions.Designer.cs">
+      <DependentUpon>201901251410560_AddRigThirdPartyJobAndWorkInstructions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901302144543_Add_OapChecklistReviewer_Added_IsReviewerToRigChecklistVerifier.cs" />
+    <Compile Include="Migrations\201901302144543_Add_OapChecklistReviewer_Added_IsReviewerToRigChecklistVerifier.Designer.cs">
+      <DependentUpon>201901302144543_Add_OapChecklistReviewer_Added_IsReviewerToRigChecklistVerifier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902221601098_ChangeAttachmentTypeInChecklistNoAnswerComments.cs" />
+    <Compile Include="Migrations\201902221601098_ChangeAttachmentTypeInChecklistNoAnswerComments.Designer.cs">
+      <DependentUpon>201902221601098_ChangeAttachmentTypeInChecklistNoAnswerComments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902221652181_AddAttachmentListToNoAnswerControl.cs" />
+    <Compile Include="Migrations\201902221652181_AddAttachmentListToNoAnswerControl.Designer.cs">
+      <DependentUpon>201902221652181_AddAttachmentListToNoAnswerControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902261851339_AddSourceChecklistAndForeignKeysToNoAnswerModel.cs" />
+    <Compile Include="Migrations\201902261851339_AddSourceChecklistAndForeignKeysToNoAnswerModel.Designer.cs">
+      <DependentUpon>201902261851339_AddSourceChecklistAndForeignKeysToNoAnswerModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902261901252_FixKeysNoAnswerModel.cs" />
+    <Compile Include="Migrations\201902261901252_FixKeysNoAnswerModel.Designer.cs">
+      <DependentUpon>201902261901252_FixKeysNoAnswerModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902261919081_NoAnswerKeyChanges.cs" />
+    <Compile Include="Migrations\201902261919081_NoAnswerKeyChanges.Designer.cs">
+      <DependentUpon>201902261919081_NoAnswerKeyChanges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902261942315_MakeNoAnswerEndDateNullable.cs" />
+    <Compile Include="Migrations\201902261942315_MakeNoAnswerEndDateNullable.Designer.cs">
+      <DependentUpon>201902261942315_MakeNoAnswerEndDateNullable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902271419166_AddOapChecklistIdToNoAnswer.cs" />
+    <Compile Include="Migrations\201902271419166_AddOapChecklistIdToNoAnswer.Designer.cs">
+      <DependentUpon>201902271419166_AddOapChecklistIdToNoAnswer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902271426402_MakeSWAFieldNullableOnNoAnswer.cs" />
+    <Compile Include="Migrations\201902271426402_MakeSWAFieldNullableOnNoAnswer.Designer.cs">
+      <DependentUpon>201902271426402_MakeSWAFieldNullableOnNoAnswer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902271448060_MakeNoAnswerCommentNullable.cs" />
+    <Compile Include="Migrations\201902271448060_MakeNoAnswerCommentNullable.Designer.cs">
+      <DependentUpon>201902271448060_MakeNoAnswerCommentNullable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902271503221_FixNoAnswerKey.cs" />
+    <Compile Include="Migrations\201902271503221_FixNoAnswerKey.Designer.cs">
+      <DependentUpon>201902271503221_FixNoAnswerKey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903051340055_RemoveNoAnswerAttachmentsModel.cs" />
+    <Compile Include="Migrations\201903051340055_RemoveNoAnswerAttachmentsModel.Designer.cs">
+      <DependentUpon>201903051340055_RemoveNoAnswerAttachmentsModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903051411125_AddNoAnswerReviewTable.cs" />
+    <Compile Include="Migrations\201903051411125_AddNoAnswerReviewTable.Designer.cs">
+      <DependentUpon>201903051411125_AddNoAnswerReviewTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903061704129_AddTourIdToAssessorModel.cs" />
+    <Compile Include="Migrations\201903061704129_AddTourIdToAssessorModel.Designer.cs">
+      <DependentUpon>201903061704129_AddTourIdToAssessorModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903080430541_OapAudits.cs" />
+    <Compile Include="Migrations\201903080430541_OapAudits.Designer.cs">
+      <DependentUpon>201903080430541_OapAudits.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903122109377_AddedImageColumnInGraphics.cs" />
+    <Compile Include="Migrations\201903122109377_AddedImageColumnInGraphics.Designer.cs">
+      <DependentUpon>201903122109377_AddedImageColumnInGraphics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903141818513_AddGetRigIdFunction.cs" />
+    <Compile Include="Migrations\201903141818513_AddGetRigIdFunction.Designer.cs">
+      <DependentUpon>201903141818513_AddGetRigIdFunction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903141845434_AddGetSiteIdFunction.cs" />
+    <Compile Include="Migrations\201903141845434_AddGetSiteIdFunction.Designer.cs">
+      <DependentUpon>201903141845434_AddGetSiteIdFunction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903141857027_AddSiteIdDefaultValueToEntities.cs" />
+    <Compile Include="Migrations\201903141857027_AddSiteIdDefaultValueToEntities.Designer.cs">
+      <DependentUpon>201903141857027_AddSiteIdDefaultValueToEntities.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903151458563_ChangeRigIdToString.cs" />
+    <Compile Include="Migrations\201903151458563_ChangeRigIdToString.Designer.cs">
+      <DependentUpon>201903151458563_ChangeRigIdToString.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903181453403_MakeRigIdRequiredOnDatabaseOnly.cs" />
+    <Compile Include="Migrations\201903181453403_MakeRigIdRequiredOnDatabaseOnly.Designer.cs">
+      <DependentUpon>201903181453403_MakeRigIdRequiredOnDatabaseOnly.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903181531471_AddDefaultRigIdValuesToEquipmentsReviewerAndWI.cs" />
+    <Compile Include="Migrations\201903181531471_AddDefaultRigIdValuesToEquipmentsReviewerAndWI.Designer.cs">
+      <DependentUpon>201903181531471_AddDefaultRigIdValuesToEquipmentsReviewerAndWI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903251800574_AddChecklistEndDateISMCertifiedColumnsInRigOapChecklist.cs" />
+    <Compile Include="Migrations\201903251800574_AddChecklistEndDateISMCertifiedColumnsInRigOapChecklist.Designer.cs">
+      <DependentUpon>201903251800574_AddChecklistEndDateISMCertifiedColumnsInRigOapChecklist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904011825574_AddDPAsTable.cs" />
+    <Compile Include="Migrations\201904011825574_AddDPAsTable.Designer.cs">
+      <DependentUpon>201904011825574_AddDPAsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\IrmaConfiguration.cs" />
+    <Compile Include="Migrations\MigrationsIrmaOapDbContextFactory.cs" />
+    <Compile Include="Migrations\OapConfiguration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\BaseIdRepository.cs" />
+    <Compile Include="Repositories\BaseRespository.cs" />
+    <Compile Include="Repositories\IrmaReviewRepository.cs" />
+    <Compile Include="Repositories\OapAuditProtocolMapRepository.cs" />
+    <Compile Include="Repositories\IrmaCAPARepository.cs" />
+    <Compile Include="Repositories\IrmaTaskRepository.cs" />
+    <Compile Include="Repositories\LookupRepository.cs" />
+    <Compile Include="Repositories\OapAuditRepository.cs" />
+    <Compile Include="Repositories\OapChecklistReviewerRepository.cs" />
+    <Compile Include="Repositories\OapAccountableRepository.cs" />
+    <Compile Include="Repositories\OapDPARepository.cs" />
+    <Compile Include="Repositories\OapEquipmentRepository.cs" />
+    <Compile Include="Repositories\OapSystemGroupRepository.cs" />
+    <Compile Include="Repositories\OapWorkInstructionRepository.cs" />
+    <Compile Include="Repositories\OapSubSystemRepository.cs" />
+    <Compile Include="Repositories\OapSystemRepository.cs" />
+    <Compile Include="Repositories\FindingSubTypeRepository.cs" />
+    <Compile Include="Repositories\FindingTypeRepository.cs" />
+    <Compile Include="Repositories\HistoricalBaseIdRepository.cs" />
+    <Compile Include="Repositories\HistoricalBaseRepository.cs" />
+    <Compile Include="Repositories\OapChecklistCommentRepository.cs" />
+    <Compile Include="Repositories\OapChecklistEquipmentRepository.cs" />
+    <Compile Include="Repositories\OapChecklistAssetDataManagementRepository.cs" />
+    <Compile Include="Repositories\OapChecklistWorkInstructionRepository.cs" />
+    <Compile Include="Repositories\OapChecklistGroupRepository.cs" />
+    <Compile Include="Repositories\OapChecklistLayoutColumnRepository.cs" />
+    <Compile Include="Repositories\OapChecklistLayoutRepository.cs" />
+    <Compile Include="Repositories\OapChecklistQuestionDataTypeRepository.cs" />
+    <Compile Include="Repositories\OapChecklistQuestionRepository.cs" />
+    <Compile Include="Repositories\OapChecklistQuestionRelatedQuestionMapRepository.cs" />
+    <Compile Include="Repositories\OapChecklistQuestionTagMapRepository.cs" />
+    <Compile Include="Repositories\OapChecklistQuestionTagRepository.cs" />
+    <Compile Include="Repositories\OapChecklistSubGroupRepository.cs" />
+    <Compile Include="Repositories\OapFrequencyRepository.cs" />
+    <Compile Include="Repositories\OapFrequencyTypeRepository.cs" />
+    <Compile Include="Repositories\OapGraphicRepository.cs" />
+    <Compile Include="Repositories\OapProtocolFormTypeRepository.cs" />
+    <Compile Include="Repositories\OapProtocolQuestionHeaderRepository.cs" />
+    <Compile Include="Repositories\AdminCustomRepository.cs" />
+    <Compile Include="Repositories\PeopleRepository.cs" />
+    <Compile Include="Repositories\PobPersonnelRepository.cs" />
+    <Compile Include="Repositories\RigOapChecklistAssessorRepository.cs" />
+    <Compile Include="Repositories\RigOapChecklistGroupAssetRepository.cs" />
+    <Compile Include="Repositories\RigOapChecklistQuestionCommentRepository.cs" />
+    <Compile Include="Repositories\RigOapChecklistQuestionFindingRepository.cs" />
+    <Compile Include="Repositories\RigOapChecklistQuestionNoAnswerCommentRepository.cs" />
+    <Compile Include="Repositories\RigOapChecklistQuestionAnswerRepository.cs" />
+    <Compile Include="Repositories\RigOapChecklistQuestionRepository.cs" />
+    <Compile Include="Repositories\RigOapChecklistRepository.cs" />
+    <Compile Include="Repositories\OapChecklistTopicRepository.cs" />
+    <Compile Include="Repositories\OapChecklistRepository.cs" />
+    <Compile Include="Repositories\OapHierarchyRepository.cs" />
+    <Compile Include="Repositories\RigOapChecklistThirdPartyJobRepository.cs" />
+    <Compile Include="Repositories\RigOapChecklistWorkInstructionRepository.cs" />
+    <Compile Include="Repositories\RigRepository.cs" />
+    <Compile Include="Repositories\WorkflowInstanceActivityRepository.cs" />
+    <Compile Include="Repositories\RigOapChecklistWorkflowRepository.cs" />
+    <Compile Include="Repositories\WorkflowRepository.cs" />
+    <Compile Include="SqlGenerators\DefaultValueSqlServerMigrationSqlGenerator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Business\Environment\Framework.csproj">
+      <Project>{a1e8e75c-3304-40e0-b08a-47ddfca8dcd4}</Project>
+      <Name>Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain\DomainModels.csproj">
+      <Project>{c7bc287e-6f9c-4393-b1ab-e3a74735e2f3}</Project>
+      <Name>DomainModels</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Interfaces\Data\DataInterfaces.csproj">
+      <Project>{c26fcfce-a6cb-4d46-b236-c8c647800861}</Project>
+      <Name>DataInterfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Interfaces\Domain\DomainInterfaces.csproj">
+      <Project>{09e11cbd-8342-4f87-847f-0e239656dca5}</Project>
+      <Name>DomainInterfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Interfaces\Services\ServiceInterfaces.csproj">
+      <Project>{14A6FFC0-8BCC-4B4D-BC74-3C9B25483664}</Project>
+      <Name>ServiceInterfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logging\Logging.csproj">
+      <Project>{6f0ba0e3-fb90-4c18-b122-bc8dd1fcb39a}</Project>
+      <Name>Logging</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201811151957513_AddFSOColumnsToRigOapChecklist.resx">
+      <DependentUpon>201811151957513_AddFSOColumnsToRigOapChecklist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811201835503_Added-Comment-Column-to-RigOapQuestion.resx">
+      <DependentUpon>201811201835503_Added-Comment-Column-to-RigOapQuestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811232122416_OapHierarchyCode.resx">
+      <DependentUpon>201811232122416_OapHierarchyCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812012156397_AddOapChecklistQuestionDataTypeAndFrequency.resx">
+      <DependentUpon>201812012156397_AddOapChecklistQuestionDataTypeAndFrequency.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812022120005_RighChecklistAnswerValue_NotRequired.resx">
+      <DependentUpon>201812022120005_RighChecklistAnswerValue_NotRequired.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812051405003_RighChecklistQuestion_CriticalityDataTypeChange.resx">
+      <DependentUpon>201812051405003_RighChecklistQuestion_CriticalityDataTypeChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812051433519_Added_ADM_WorkIngInstructions_Equiment_System_SubSystem_Model.resx">
+      <DependentUpon>201812051433519_Added_ADM_WorkIngInstructions_Equiment_System_SubSystem_Model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812101531576_AddRighChecklistQuestionComment.resx">
+      <DependentUpon>201812101531576_AddRighChecklistQuestionComment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812141420016_ChangedRigOapChecklistFindingToRigOapChecklistQuestionFinding.resx">
+      <DependentUpon>201812141420016_ChangedRigOapChecklistFindingToRigOapChecklistQuestionFinding.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901012152514_AddRigOapChecklistQuestionNoAnswerCommentAndFindingModifications.resx">
+      <DependentUpon>201901012152514_AddRigOapChecklistQuestionNoAnswerCommentAndFindingModifications.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901101515583_ModifiedEditNoValueAndYesValueType_OAPChecklistQuestion.resx">
+      <DependentUpon>201901101515583_ModifiedEditNoValueAndYesValueType_OAPChecklistQuestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901221934599_ChangesForRigChecklistDataAssetManagement.resx">
+      <DependentUpon>201901221934599_ChangesForRigChecklistDataAssetManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901251410560_AddRigThirdPartyJobAndWorkInstructions.resx">
+      <DependentUpon>201901251410560_AddRigThirdPartyJobAndWorkInstructions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901291709370_AddOapAccountablesTable.resx">
+      <DependentUpon>201901291709370_AddOapAccountablesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901302144543_Add_OapChecklistReviewer_Added_IsReviewerToRigChecklistVerifier.resx">
+      <DependentUpon>201901302144543_Add_OapChecklistReviewer_Added_IsReviewerToRigChecklistVerifier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902221601098_ChangeAttachmentTypeInChecklistNoAnswerComments.resx">
+      <DependentUpon>201902221601098_ChangeAttachmentTypeInChecklistNoAnswerComments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902221652181_AddAttachmentListToNoAnswerControl.resx">
+      <DependentUpon>201902221652181_AddAttachmentListToNoAnswerControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902261851339_AddSourceChecklistAndForeignKeysToNoAnswerModel.resx">
+      <DependentUpon>201902261851339_AddSourceChecklistAndForeignKeysToNoAnswerModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902261901252_FixKeysNoAnswerModel.resx">
+      <DependentUpon>201902261901252_FixKeysNoAnswerModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902261919081_NoAnswerKeyChanges.resx">
+      <DependentUpon>201902261919081_NoAnswerKeyChanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902261942315_MakeNoAnswerEndDateNullable.resx">
+      <DependentUpon>201902261942315_MakeNoAnswerEndDateNullable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902271419166_AddOapChecklistIdToNoAnswer.resx">
+      <DependentUpon>201902271419166_AddOapChecklistIdToNoAnswer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902271426402_MakeSWAFieldNullableOnNoAnswer.resx">
+      <DependentUpon>201902271426402_MakeSWAFieldNullableOnNoAnswer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902271448060_MakeNoAnswerCommentNullable.resx">
+      <DependentUpon>201902271448060_MakeNoAnswerCommentNullable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902271503221_FixNoAnswerKey.resx">
+      <DependentUpon>201902271503221_FixNoAnswerKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903051340055_RemoveNoAnswerAttachmentsModel.resx">
+      <DependentUpon>201903051340055_RemoveNoAnswerAttachmentsModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903051411125_AddNoAnswerReviewTable.resx">
+      <DependentUpon>201903051411125_AddNoAnswerReviewTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903061704129_AddTourIdToAssessorModel.resx">
+      <DependentUpon>201903061704129_AddTourIdToAssessorModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903080430541_OapAudits.resx">
+      <DependentUpon>201903080430541_OapAudits.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903122109377_AddedImageColumnInGraphics.resx">
+      <DependentUpon>201903122109377_AddedImageColumnInGraphics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903141818513_AddGetRigIdFunction.resx">
+      <DependentUpon>201903141818513_AddGetRigIdFunction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903141845434_AddGetSiteIdFunction.resx">
+      <DependentUpon>201903141845434_AddGetSiteIdFunction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903141857027_AddSiteIdDefaultValueToEntities.resx">
+      <DependentUpon>201903141857027_AddSiteIdDefaultValueToEntities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903151458563_ChangeRigIdToString.resx">
+      <DependentUpon>201903151458563_ChangeRigIdToString.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903181453403_MakeRigIdRequiredOnDatabaseOnly.resx">
+      <DependentUpon>201903181453403_MakeRigIdRequiredOnDatabaseOnly.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903181531471_AddDefaultRigIdValuesToEquipmentsReviewerAndWI.resx">
+      <DependentUpon>201903181531471_AddDefaultRigIdValuesToEquipmentsReviewerAndWI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903251800574_AddChecklistEndDateISMCertifiedColumnsInRigOapChecklist.resx">
+      <DependentUpon>201903251800574_AddChecklistEndDateISMCertifiedColumnsInRigOapChecklist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904011825574_AddDPAsTable.resx">
+      <DependentUpon>201904011825574_AddDPAsTable.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Migrations\Scripts\201811161319222_AutomaticMigration.sql" />
+    <Content Include="Migrations\Scripts\201811201835503_Added-Comment-Column-to-RigOapQuestion.sql" />
+    <Content Include="Migrations\Scripts\201811232100485_OapHierarchyCode.Sql" />
+    <Content Include="Migrations\Scripts\201812012156397_AddOapChecklistQuestionDataTypeAndFrequency.sql" />
+    <Content Include="Migrations\Scripts\201812022120005_RighChecklistAnswerValue_NotRequired.sql" />
+    <Content Include="Migrations\Scripts\201812051405003_RighChecklistQuestion_CriticalityDataTypeChange.sql" />
+    <Content Include="Migrations\Scripts\201812101531576_AddRighChecklistQuestionComment.sql" />
+    <Content Include="Migrations\Scripts\201812141420016_ChangedRigOapChecklistFindingToRigOapChecklistQuestionFinding.sql" />
+    <Content Include="Migrations\Scripts\201901012152514_AddRigOapChecklistQuestionNoAnswerCommentAndFindingModifications.sql" />
+    <Content Include="Migrations\Scripts\201901101515583_ModifiedEditNoValueAndYesValueType_OAPChecklistQuestion.sql" />
+    <Content Include="Migrations\Scripts\201901221934599_ChangesForRigChecklistDataAssetManagement.sql" />
+    <Content Include="Migrations\Scripts\201901251410560_AddRigThirdPartyJobAndWorkInstructions.sql" />
+    <Content Include="Migrations\Scripts\201901302144543_Add_OapChecklistReviewer_Added_IsReviewerToRigChecklistVerifier.sql" />
+    <Content Include="Migrations\Scripts\Added_ADM_WorkIngInstructions_Equiment_System_SubSystem_Model.sql" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

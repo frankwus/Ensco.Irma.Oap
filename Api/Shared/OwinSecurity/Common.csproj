@@ -1,0 +1,349 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2A5F56FC-C374-4072-8AA0-FFD9D38A7C66}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ensco.Irma.Oap.Api.Common</RootNamespace>
+    <AssemblyName>Ensco.Irma.Oap.Api.Common</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'UAT|AnyCPU'">
+    <OutputPath>bin\UAT\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'RIG-API-UAT|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\RIG-API-UAT\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'CORP-API-UAT|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\CORP-API-UAT\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'RIG-API-DEV|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\RIG-API-DEV\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'R8505-RIG-API|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\R8505-RIG-API\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=7.0.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\AutoMapper.7.0.1\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="MediatR, Version=5.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\MediatR.5.1.0\lib\net45\MediatR.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.Owin.4.0.0\lib\net451\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.Owin.Host.SystemWeb.4.0.0\lib\net451\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.Owin.Security.4.0.0\lib\net451\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.Owin.Security.Cookies.4.0.0\lib\net451\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.Owin.Security.OAuth.4.0.0\lib\net451\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="SimpleInjector, Version=4.3.0.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\SimpleInjector.4.3.0\lib\net45\SimpleInjector.dll</HintPath>
+    </Reference>
+    <Reference Include="SimpleInjector.Integration.WebApi, Version=4.3.0.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\SimpleInjector.Integration.WebApi.4.3.0\lib\net45\SimpleInjector.Integration.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Activities" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.DirectoryServices.AccountManagement" />
+    <Reference Include="System.Net.Http.Extensions, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.AspNet.WebApi.Client.5.2.6\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives, Version=4.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Http, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.AspNet.WebApi.Core.5.2.6\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Owin, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.AspNet.WebApi.Owin.5.2.6\lib\net45\System.Web.Http.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActionFilters\GlobalExceptionFilter.cs" />
+    <Compile Include="ActionFilters\LoggingFilter.cs" />
+    <Compile Include="ActionFilters\LogTraceWriter.cs" />
+    <Compile Include="ActionFilters\ValidateModelFilter.cs" />
+    <Compile Include="ActionResults\WebApiResult.cs" />
+    <Compile Include="AppStartup\IOapWebApiConfig.cs" />
+    <Compile Include="AppStartup\OapWebApiConfig.cs" />
+    <Compile Include="Commands\Checklist\AssetDataManagement\AddChecklistAssetDataManagementRequest.cs" />
+    <Compile Include="Commands\Checklist\AssetDataManagement\DeleteChecklistAssetDataManagementRequest.cs" />
+    <Compile Include="Commands\Checklist\AssetDataManagement\GetAllByChecklistGroupAssetDataManagementRequest.cs" />
+    <Compile Include="Commands\Checklist\AssetDataManagement\GetAllChecklistAssetDataManagementRequest.cs" />
+    <Compile Include="Commands\Checklist\AssetDataManagement\UpdateChecklistAssetDataManagementRequest.cs" />
+    <Compile Include="Commands\Checklist\Finding\AddOapChecklistQuestionFindingRequest.cs" />
+    <Compile Include="Commands\Checklist\Finding\DeleteOapChecklistQuestionFindingRequest.cs" />
+    <Compile Include="Commands\Checklist\Finding\GetAllOapChecklistFindingsForChecklistRequest.cs" />
+    <Compile Include="Commands\Checklist\Finding\GetAllOapChecklistFindingsForQuestionRequest.cs" />
+    <Compile Include="Commands\Checklist\Finding\GetAllPreviousOapChecklistQuestionFindingRequest.cs" />
+    <Compile Include="Commands\Checklist\Finding\GetAllOapChecklistQuestionFindingRequest.cs" />
+    <Compile Include="Commands\Checklist\Finding\GetCAPAByIdRequest.cs" />
+    <Compile Include="Commands\Checklist\Finding\GetCAPAsByChecklistIdRequest.cs" />
+    <Compile Include="Commands\Checklist\Finding\GetOapChecklistQuestionFindingRequest.cs" />
+    <Compile Include="Commands\Checklist\Finding\UpdateOapChecklistQuestionFindingRequest.cs" />
+    <Compile Include="Commands\Checklist\Frequency\AddFrequencyRequest.cs" />
+    <Compile Include="Commands\Checklist\Frequency\DeleteFrequencyRequest.cs" />
+    <Compile Include="Commands\Checklist\Frequency\GetAllFrequencyRequest.cs" />
+    <Compile Include="Commands\Checklist\Frequency\GetFrequencyRequest.cs" />
+    <Compile Include="Commands\Checklist\Frequency\UpdateFrequencyRequest.cs" />
+    <Compile Include="Commands\Checklist\GetAllAuditProtocolsRequest.cs" />
+    <Compile Include="Commands\Checklist\GetChecklistsByTypeNameRequest.cs" />
+    <Compile Include="Commands\Checklist\NoAnswer\AddQuestionNoAnswerRequest.cs" />
+    <Compile Include="Commands\Checklist\NoAnswer\GetAllQuestionNoAnswersRequest.cs" />
+    <Compile Include="Commands\Checklist\NoAnswer\GetAllQuestionOpenNoAnswersRequest.cs" />
+    <Compile Include="Commands\Checklist\GetChecklistByTypeSubTypeCodeFormTypeRequest.cs" />
+    <Compile Include="Commands\Checklist\GetChecklistByTypeSubTypeCodeRequest.cs" />
+    <Compile Include="Commands\Checklist\GetChecklistByTypeSubTypeFormTypeRequest.cs" />
+    <Compile Include="Commands\Checklist\GetChecklistByTypeSubTypeRequest.cs" />
+    <Compile Include="Commands\Checklist\GetChecklistByTitleRequest.cs" />
+    <Compile Include="Commands\Checklist\NoAnswer\GetFirstQuestionOpenNoAnswersRequest.cs" />
+    <Compile Include="Commands\Checklist\NoAnswer\GetNoAnswerByIdRequest.cs" />
+    <Compile Include="Commands\Checklist\NoAnswer\UpdateQuestionNoAnswerRequest.cs" />
+    <Compile Include="Commands\Lookup\GetAllCriticalityRequest.cs" />
+    <Compile Include="Commands\People\GetPobPersonnelRequest.cs" />
+    <Compile Include="Controllers\Lookup\LookupController.cs" />
+    <Compile Include="Controllers\Oap\OapChecklistAssetDataManagementController.cs" />
+    <Compile Include="Controllers\Oap\OapChecklistFindingController.cs" />
+    <Compile Include="Controllers\Oap\OapFrequencyController.cs" />
+    <Compile Include="Extensions\AutoMapperExtensions.cs" />
+    <Compile Include="Commands\Checklist\AddChecklistRequest.cs" />
+    <Compile Include="Commands\Checklist\DeleteChecklistRequest.cs" />
+    <Compile Include="Commands\Checklist\FindingSubType\AddFindingSubTypeRequest.cs" />
+    <Compile Include="Commands\Checklist\FindingSubType\DeleteFindingSubTypeRequest.cs" />
+    <Compile Include="Commands\Checklist\FindingSubType\GetAllFindingSubTypeRequest.cs" />
+    <Compile Include="Commands\Checklist\FindingSubType\GetFindingSubTypeRequest.cs" />
+    <Compile Include="Commands\Checklist\FindingSubType\UpdateFindingSubTypeRequest.cs" />
+    <Compile Include="Commands\Checklist\FindingType\AddFindingTypeRequest.cs" />
+    <Compile Include="Commands\Checklist\FindingType\DeleteFindingTypeRequest.cs" />
+    <Compile Include="Commands\Checklist\FindingType\GetAllFindingTypeRequest.cs" />
+    <Compile Include="Commands\Checklist\FindingType\GetFindingTypeRequest.cs" />
+    <Compile Include="Commands\Checklist\FindingType\UpdateFindingTypeRequest.cs" />
+    <Compile Include="Commands\Checklist\GetAllChecklistRequest.cs" />
+    <Compile Include="Commands\Checklist\GetChecklistRequest.cs" />
+    <Compile Include="Commands\Checklist\UpdateChecklistRequest.cs" />
+    <Compile Include="Commands\People\GetAllPeopleRequest.cs" />
+    <Compile Include="Commands\People\GetPersonRequest.cs" />
+    <Compile Include="Commands\Security\LoginRequest.cs" />
+    <Compile Include="Commands\Security\LogoutRequest.cs" />
+    <Compile Include="Controllers\Oap\OapChecklistController.cs" />
+    <Compile Include="Controllers\Security\PeopleController.cs" />
+    <Compile Include="Controllers\Oap\FindingSubTypeController.cs" />
+    <Compile Include="Controllers\Oap\FindingTypeController.cs" />
+    <Compile Include="Controllers\Security\AuthenticationController.cs" />
+    <Compile Include="Formatters\BrowserJsonFormatter.cs" />
+    <Compile Include="Formatters\JsonNewtonFormatter.cs" />
+    <Compile Include="Handlers\Checklist\AddChecklistHandler.cs" />
+    <Compile Include="Handlers\Checklist\AssetDataManagement\AddChecklistAssetDataManagementHandler.cs" />
+    <Compile Include="Handlers\Checklist\AssetDataManagement\DeleteChecklistAssetDataManagementHandler.cs" />
+    <Compile Include="Handlers\Checklist\AssetDataManagement\GetAllByChecklistGroupAssetDataManagementHandler.cs" />
+    <Compile Include="Handlers\Checklist\AssetDataManagement\GetAllChecklistAssetDataManagementHandler.cs" />
+    <Compile Include="Handlers\Checklist\AssetDataManagement\UpdateChecklistAssetDataManagementHandler.cs" />
+    <Compile Include="Handlers\Checklist\DeleteChecklistHandler.cs" />
+    <Compile Include="Handlers\Checklist\FindingSubType\AddFindingSubTypeHandler.cs" />
+    <Compile Include="Handlers\Checklist\FindingSubType\DeleteFindingSubTypeHandler.cs" />
+    <Compile Include="Handlers\Checklist\FindingSubType\GetAllFindingSubTypeHandler.cs" />
+    <Compile Include="Handlers\Checklist\FindingSubType\GetFindingSubTypeHandler.cs" />
+    <Compile Include="Handlers\Checklist\FindingSubType\UpdateFindingTypeHandler.cs" />
+    <Compile Include="Handlers\Checklist\FindingType\AddFindingTypeHandler.cs" />
+    <Compile Include="Handlers\Checklist\FindingType\DeleteFindingTypeHandler.cs" />
+    <Compile Include="Handlers\Checklist\FindingType\GetAllFindingTypeHandler.cs" />
+    <Compile Include="Handlers\Checklist\FindingType\GetFindingTypeHandler.cs" />
+    <Compile Include="Handlers\Checklist\FindingType\UpdateFindingTypeHandler.cs" />
+    <Compile Include="Handlers\Checklist\Finding\AddOapChecklistQuestionFindingHandler.cs" />
+    <Compile Include="Handlers\Checklist\Finding\DeleteOapChecklistQuestionFindingHandler.cs" />
+    <Compile Include="Handlers\Checklist\Finding\GetAllOapChecklistFindingsForChecklistHandler.cs" />
+    <Compile Include="Handlers\Checklist\Finding\GetAllOapChecklistFindingsForQuestionHandler.cs" />
+    <Compile Include="Handlers\Checklist\Finding\GetAllPreviousOapChecklistQuestionFindingHandler.cs" />
+    <Compile Include="Handlers\Checklist\Finding\GetAllOapChecklistQuestionFindingHandler.cs" />
+    <Compile Include="Handlers\Checklist\Finding\GetCapaByChecklistIdHandler.cs" />
+    <Compile Include="Handlers\Checklist\Finding\GetCAPAByIdHandler.cs" />
+    <Compile Include="Handlers\Checklist\Finding\GetOapChecklistQuestionFindingHandler.cs" />
+    <Compile Include="Handlers\Checklist\Finding\UpdateOapChecklistQuestionFindingHandler.cs" />
+    <Compile Include="Handlers\Checklist\Frequency\AddFrequencyHandler.cs" />
+    <Compile Include="Handlers\Checklist\Frequency\DeleteFrequencyHandler.cs" />
+    <Compile Include="Handlers\Checklist\Frequency\GetAllFrequencyHandler.cs" />
+    <Compile Include="Handlers\Checklist\Frequency\GetFrequencyHandler.cs" />
+    <Compile Include="Handlers\Checklist\Frequency\UpdateFrequencyHandler.cs" />
+    <Compile Include="Handlers\Checklist\GetAllAuditProtocolsHandler.cs" />
+    <Compile Include="Handlers\Checklist\GetChecklistsByTypeNameHandler.cs" />
+    <Compile Include="Handlers\Checklist\NoAnswer\AddQuestionNoAnswerHandler.cs" />
+    <Compile Include="Handlers\Checklist\NoAnswer\GetAllQuestionNoAnswersHandler.cs" />
+    <Compile Include="Handlers\Checklist\NoAnswer\GetAllQuestionOpenNoAnswersHandler.cs" />
+    <Compile Include="Handlers\Checklist\GetChecklistByTypeSubTypeCodeHandler.cs" />
+    <Compile Include="Handlers\Checklist\GetChecklistByTypeSubTypeCodeFormTypeHandler.cs" />
+    <Compile Include="Handlers\Checklist\GetChecklistByTypeSubTypeFormTypeHandler.cs" />
+    <Compile Include="Handlers\Checklist\GetChecklistByTypeSubTypeHandler.cs" />
+    <Compile Include="Handlers\Checklist\GetAllChecklistHandler.cs" />
+    <Compile Include="Handlers\Checklist\GetChecklistByNameHandler.cs" />
+    <Compile Include="Handlers\Checklist\GetChecklistHandler.cs" />
+    <Compile Include="Handlers\Checklist\NoAnswer\GetFirstQuestionOpenNoAnswersHandler.cs" />
+    <Compile Include="Handlers\Checklist\NoAnswer\GetNoAnswerByIdHandler.cs" />
+    <Compile Include="Handlers\Checklist\NoAnswer\UpdateQuestionNoAnswerHandler.cs" />
+    <Compile Include="Handlers\Checklist\UpdateChecklistHandler.cs" />
+    <Compile Include="Handlers\Lookup\GetAllCriticalityHandler.cs" />
+    <Compile Include="Handlers\People\GetAllPeopleHandler.cs" />
+    <Compile Include="Handlers\People\GetPobPersonnelHandler.cs" />
+    <Compile Include="Handlers\People\GetPersonHandler.cs" />
+    <Compile Include="Handlers\Security\LoginHandler.cs" />
+    <Compile Include="Handlers\Security\LogoutHandler.cs" />
+    <Compile Include="Models\GetAllModel.cs" />
+    <Compile Include="Models\Security\LoginModel.cs" />
+    <Compile Include="OapApiController.cs" />
+    <Compile Include="Profiles\RigOapChecklistQuestionFindingProfile.cs" />
+    <Compile Include="Security\AuthenticationClaimTypes.cs" />
+    <Compile Include="Security\Cookie\OapCookieAuthenticationHandler.cs" />
+    <Compile Include="Security\Cookie\OapCookieAuthenticationMiddleware.cs" />
+    <Compile Include="Security\Cookie\OapCookieAuthenticationProvider.cs" />
+    <Compile Include="Extensions\OapWebApiExtentions.cs" />
+    <Compile Include="Security\OapAuthorizationOwinMiddleware.cs" />
+    <Compile Include="Security\OapWebAuthorizationAttribute.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StartupConfiguration.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Business\Environment\Framework.csproj">
+      <Project>{a1e8e75c-3304-40e0-b08a-47ddfca8dcd4}</Project>
+      <Name>Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Business\Services\BusinessServices.csproj">
+      <Project>{68756816-8632-4b4c-b760-1968b1c31289}</Project>
+      <Name>BusinessServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Business\Workflow\WorkflowEngine.csproj">
+      <Project>{433cc126-cb25-4043-b2d8-de8c9e7f9f51}</Project>
+      <Name>WorkflowEngine</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Data\EfData.csproj">
+      <Project>{6449b522-3f17-43e6-8423-6c2de0891c30}</Project>
+      <Name>EfData</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Domain\DomainModels.csproj">
+      <Project>{C7BC287E-6F9C-4393-B1AB-E3A74735E2F3}</Project>
+      <Name>DomainModels</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Interfaces\Data\DataInterfaces.csproj">
+      <Project>{c26fcfce-a6cb-4d46-b236-c8c647800861}</Project>
+      <Name>DataInterfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Interfaces\Domain\DomainInterfaces.csproj">
+      <Project>{09e11cbd-8342-4f87-847f-0e239656dca5}</Project>
+      <Name>DomainInterfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Interfaces\Services\ServiceInterfaces.csproj">
+      <Project>{14A6FFC0-8BCC-4B4D-BC74-3C9B25483664}</Project>
+      <Name>ServiceInterfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Logging\Logging.csproj">
+      <Project>{6f0ba0e3-fb90-4c18-b122-bc8dd1fcb39a}</Project>
+      <Name>Logging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Shared\Constants\ApiConstants.csproj">
+      <Project>{fa75858f-d857-4c2e-bc31-16768aed3f7e}</Project>
+      <Name>ApiConstants</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Shared\Extensions\Extensions.csproj">
+      <Project>{EDFCF717-F999-49E2-95A5-B96A88C00FCC}</Project>
+      <Name>Extensions</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\..\..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\..\..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('..\..\..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\..\..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
+</Project>

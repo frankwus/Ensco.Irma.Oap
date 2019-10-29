@@ -1,0 +1,175 @@
+﻿<Activity mc:Ignorable="sap sap2010 sads" x:Class="Ensco.Irma.Services.Workflow.Designers.BarrierAuthorityOIM"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+ xmlns:eibwa="clr-namespace:Ensco.Irma.Business.Workflow.Activities;assembly=Ensco.Irma.Business"
+ xmlns:eimdw="clr-namespace:Ensco.Irma.Models.Domain.Workflow;assembly=Ensco.Irma.Models.Domain"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:mca="clr-namespace:Microsoft.CSharp.Activities;assembly=System.Activities"
+ xmlns:s="clr-namespace:System;assembly=mscorlib"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+ xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="RigOapChecklistId" Type="InArgument(s:Guid)" />
+    <x:Property Name="argument1" Type="InArgument(x:String)" />
+  </x:Members>
+  <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
+  <sap2010:WorkflowViewState.IdRef>WorkflowConsole.Activity1_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Text</x:String>
+      <x:String>Ensco.Irma.Models.Domain.Workflow</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>EntityFramework</AssemblyReference>
+      <AssemblyReference>EntityFramework.SqlServer</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Activities.Presentation</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.DataAnnotations</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>Microsoft.CSharp</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Net.Http</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Ensco.Irma.Framework</AssemblyReference>
+      <AssemblyReference>Ensco.Irma.Services</AssemblyReference>
+      <AssemblyReference>Ensco.Irma.Business</AssemblyReference>
+      <AssemblyReference>Ensco.Irma.Data</AssemblyReference>
+      <AssemblyReference>Ensco.Irma.Models.Domain</AssemblyReference>
+      <AssemblyReference>Ensco.Irma.Interfaces.Data</AssemblyReference>
+      <AssemblyReference>Ensco.Irma.Interfaces.Domain</AssemblyReference>
+      <AssemblyReference>Ensco.Irma.Interfaces.Services</AssemblyReference>
+      <AssemblyReference>Ensco.Irma.Logging</AssemblyReference>
+      <AssemblyReference>Ensco.Irma.Extensions</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>WorkflowConsole</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <StateMachine sap2010:WorkflowViewState.IdRef="StateMachine_1">
+    <StateMachine.InitialState>
+      <State x:Name="__ReferenceID0" DisplayName="Created" sap2010:WorkflowViewState.IdRef="State_1">
+        <State.Entry>
+          <Sequence sap2010:WorkflowViewState.IdRef="Sequence_1">
+            <WriteLine sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="Workflow Started" />
+          </Sequence>
+        </State.Entry>
+        <State.Exit>
+          <WriteLine sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="Exiting the Activity" />
+        </State.Exit>
+        <State.Transitions>
+          <Transition DisplayName="Approved" sap2010:WorkflowViewState.IdRef="Transition_5">
+            <Transition.Trigger>
+              <DoWhile sap2010:WorkflowViewState.IdRef="DoWhile_1">
+                <DoWhile.Variables>
+                  <Variable x:TypeArguments="x:Boolean" Name="IsAssigned" />
+                  <Variable x:TypeArguments="eimdw:AssignmentRequest" Name="Assignments" />
+                </DoWhile.Variables>
+                <DoWhile.Condition>
+                  <mca:CSharpValue x:TypeArguments="x:Boolean">!IsAssigned</mca:CSharpValue>
+                </DoWhile.Condition>
+                <eibwa:ReceiveAssignment RequiredPermission="{x:Null}" sap2010:WorkflowViewState.IdRef="ReceiveAssignment_1" PromptFilter="false" PromptForPeople="False" RequestVerb="Assign">
+                  <eibwa:ReceiveAssignment.Result>
+                    <OutArgument x:TypeArguments="eimdw:AssignmentRequest">
+                      <mca:CSharpReference x:TypeArguments="eimdw:AssignmentRequest">Assignments</mca:CSharpReference>
+                    </OutArgument>
+                  </eibwa:ReceiveAssignment.Result>
+                  <eibwa:ReceiveAssignment.RigOapChecklistId>
+                    <InArgument x:TypeArguments="s:Guid">
+                      <mca:CSharpValue x:TypeArguments="s:Guid">RigOapChecklistId</mca:CSharpValue>
+                    </InArgument>
+                  </eibwa:ReceiveAssignment.RigOapChecklistId>
+                </eibwa:ReceiveAssignment>
+              </DoWhile>
+            </Transition.Trigger>
+            <Transition.To>
+              <State x:Name="__ReferenceID1" DisplayName="FinalState" sap2010:WorkflowViewState.IdRef="State_3" IsFinal="True">
+                <State.Entry>
+                  <WriteLine sap2010:WorkflowViewState.IdRef="WriteLine_3" Text="Final State" />
+                </State.Entry>
+              </State>
+            </Transition.To>
+          </Transition>
+        </State.Transitions>
+      </State>
+    </StateMachine.InitialState>
+    <x:Reference>__ReferenceID0</x:Reference>
+    <x:Reference>__ReferenceID1</x:Reference>
+    <sads:DebugSymbol.Symbol>d1JDOlxMb2NhbFxURlNcSVJNQU9BUFxCdXNpbmVzc1xTZXJ2aWNlc1xXb3JrZmxvd1xEZXNpZ25lcnNcQmFycmllckF1dGhvcml0eU9JTS54YW1sEkIDdBICAQFEB28PAgEGZw9rFwIBAkYLSBYCAR5LC0tiAgEcUA9kGQIBCGkTaWECAQRHDUdgAgEfS0lLXwIBHVYTVl0CARdYEWMrAgEJaVFpXgIBBUdLR10CASBgF2BkAgESWKMBWKoBAgERWLcBWL8BAgEQWxdbdwIBC1iLAViSAQIBCg==</sads:DebugSymbol.Symbol>
+  </StateMachine>
+  <sap2010:WorkflowViewState.ViewStateManager>
+    <sap2010:ViewStateManager>
+      <sap2010:ViewStateData Id="WriteLine_1" sap:VirtualizedContainerService.HintSize="210.4,62.4" />
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="232.8,187.2">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="WriteLine_2" sap:VirtualizedContainerService.HintSize="210.4,62.4" />
+      <sap2010:ViewStateData Id="ReceiveAssignment_1" sap:VirtualizedContainerService.HintSize="200,22.4" />
+      <sap2010:ViewStateData Id="DoWhile_1" sap:VirtualizedContainerService.HintSize="464,224.8" />
+      <sap2010:ViewStateData Id="WriteLine_3" sap:VirtualizedContainerService.HintSize="210.4,62.4" />
+      <sap2010:ViewStateData Id="State_3" sap:VirtualizedContainerService.HintSize="114.4,61.6">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">260,262.5</av:Point>
+            <av:Size x:Key="ShapeSize">114.4,61.6</av:Size>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Transition_5" sap:VirtualizedContainerService.HintSize="504.8,676.8">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:PointCollection x:Key="ConnectorLocation">156.92,180 156.92,302.54 260,302.54</av:PointCollection>
+            <x:Int32 x:Key="SrcConnectionPointIndex">35</x:Int32>
+            <x:Int32 x:Key="DestConnectionPointIndex">49</x:Int32>
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="State_1" sap:VirtualizedContainerService.HintSize="237.6,100">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">50,80</av:Point>
+            <av:Size x:Key="ShapeSize">237.6,100</av:Size>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            <x:Double x:Key="StateContainerWidth">223.20000000000005</x:Double>
+            <x:Double x:Key="StateContainerHeight">63.28000000000003</x:Double>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="StateMachine_1" sap:VirtualizedContainerService.HintSize="614.4,636.8">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <av:Point x:Key="ShapeLocation">440,2.4</av:Point>
+            <x:Double x:Key="StateContainerWidth">600</x:Double>
+            <x:Double x:Key="StateContainerHeight">600</x:Double>
+            <av:PointCollection x:Key="ConnectorLocation">470,77.6 470,129.6 287.6,129.6</av:PointCollection>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="WorkflowConsole.Activity1_1" sap:VirtualizedContainerService.HintSize="654.4,716.8" />
+    </sap2010:ViewStateManager>
+  </sap2010:WorkflowViewState.ViewStateManager>
+</Activity>

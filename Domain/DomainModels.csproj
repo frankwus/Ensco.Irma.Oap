@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C7BC287E-6F9C-4393-B1AB-E3A74735E2F3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ensco.Irma.Models.Domain</RootNamespace>
+    <AssemblyName>Ensco.Irma.Models.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'UAT|AnyCPU'">
+    <OutputPath>bin\UAT\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'RIG-API-UAT|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\RIG-API-UAT\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'CORP-API-UAT|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\CORP-API-UAT\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'RIG-API-DEV|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\RIG-API-DEV\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'R8505-RIG-API|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\R8505-RIG-API\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpo.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Attributes\Non-Oap.cs" />
+    <Compile Include="Attributes\SqlDefaultValueAttribute.cs" />
+    <Compile Include="Entity.cs" />
+    <Compile Include="EntityId.cs" />
+    <Compile Include="HistoricalEntity.cs" />
+    <Compile Include="HistoricalEntityId.cs" />
+    <Compile Include="IRMA\AdminCustom.cs" />
+    <Compile Include="IRMA\IrmaCapa.cs" />
+    <Compile Include="IRMA\IrmaEntity.cs" />
+    <Compile Include="IRMA\IrmaEntityId.cs" />
+    <Compile Include="IRMA\IrmaHistoricalEntityId.cs" />
+    <Compile Include="IRMA\IrmaReview.cs" />
+    <Compile Include="IRMA\IrmaTask.cs" />
+    <Compile Include="IRMA\Location.cs" />
+    <Compile Include="IRMA\PobPersonnel.cs" />
+    <Compile Include="IRMA\PobTour.cs" />
+    <Compile Include="IRMA\Position.cs" />
+    <Compile Include="Oap\Audit\OapAudit.cs" />
+    <Compile Include="Oap\Audit\OapAuditProtocol.cs" />
+    <Compile Include="Oap\Audit\OapAuditRight.cs" />
+    <Compile Include="Oap\Checklist\DomainEnums.cs" />
+    <Compile Include="Oap\Checklist\Lifesaver\LifesaverCompliance.cs" />
+    <Compile Include="Oap\Checklist\OapAssetDataManagement.cs" />
+    <Compile Include="Oap\Checklist\OapChecklistReviewer.cs" />
+    <Compile Include="Oap\Checklist\OapChecklistWorkInstruction.cs" />
+    <Compile Include="Oap\Checklist\OapChecklistEquipment.cs" />
+    <Compile Include="Oap\Checklist\OapChecklistFrequency.cs" />
+    <Compile Include="Oap\Checklist\OapCheckListQuestionRelatedQuestionMap.cs" />
+    <Compile Include="Oap\Checklist\OapChecklistQuestionTag.cs" />
+    <Compile Include="Oap\Checklist\OapChecklistQuestionTagMap.cs" />
+    <Compile Include="Oap\Checklist\OapEquipment.cs" />
+    <Compile Include="Oap\Checklist\OapChecklistQuestionDataType.cs" />
+    <Compile Include="Oap\Checklist\OapFrequency.cs" />
+    <Compile Include="Oap\Checklist\OapSubSystem.cs" />
+    <Compile Include="Oap\Checklist\OapSystem.cs" />
+    <Compile Include="Oap\Checklist\OapSystemGroup.cs" />
+    <Compile Include="Oap\Checklist\OapWorkInstruction.cs" />
+    <Compile Include="Oap\Checklist\RigOapChecklistGroupAsset.cs" />
+    <Compile Include="Oap\Checklist\RigOapChecklistQuestionComment.cs" />
+    <Compile Include="Oap\Checklist\RigOapChecklistQuestionFinding.cs" />
+    <Compile Include="IRMA\Lookup\Criticality.cs" />
+    <Compile Include="Oap\Checklist\RigOapChecklistQuestionNoAnswerComment.cs" />
+    <Compile Include="Oap\Checklist\RigOapChecklistQuestionNoAnswerReview.cs" />
+    <Compile Include="Oap\Checklist\RigOapChecklistThirdPartyJob.cs" />
+    <Compile Include="Oap\Checklist\RigOapChecklistWorkInstruction.cs" />
+    <Compile Include="Oap\DPA.cs" />
+    <Compile Include="Oap\OapAccountable.cs" />
+    <Compile Include="Oap\RigChecklistValidationResult.cs" />
+    <Compile Include="Security\AssignedUser.cs" />
+    <Compile Include="Security\Assignee.cs" />
+    <Compile Include="Oap\Checklist\OapChecklist.cs" />
+    <Compile Include="Oap\Checklist\OapChecklistComment.cs" />
+    <Compile Include="Oap\Checklist\OapChecklistGroup.cs" />
+    <Compile Include="Oap\Checklist\OapChecklistLayout.cs" />
+    <Compile Include="Oap\Checklist\OapChecklistLayoutColumn.cs" />
+    <Compile Include="Oap\Checklist\OapChecklistQuestion.cs" />
+    <Compile Include="Oap\Checklist\OapChecklistSubGroup.cs" />
+    <Compile Include="Oap\Checklist\OapChecklistTopic.cs" />
+    <Compile Include="Oap\Checklist\OapChecklistEnum.cs" />
+    <Compile Include="Oap\Checklist\OapFrequencyType.cs" />
+    <Compile Include="Oap\Checklist\OapGraphic.cs" />
+    <Compile Include="Oap\Checklist\OapProtocolFormType.cs" />
+    <Compile Include="Oap\Checklist\OapProtocolQuestionHeader.cs" />
+    <Compile Include="Oap\Checklist\RigOapCheckList.cs" />
+    <Compile Include="Oap\Checklist\RigOapChecklistAssessor.cs" />
+    <Compile Include="Oap\Checklist\RigOapChecklistComment.cs" />
+    <Compile Include="Oap\Checklist\RigOapChecklistQuestion.cs" />
+    <Compile Include="Oap\Checklist\RigOapChecklistQuestionAnswer.cs" />
+    <Compile Include="Oap\Checklist\RigOapChecklistVerifier.cs" />
+    <Compile Include="Oap\Checklist\RigOapChecklistWorkflow.cs" />
+    <Compile Include="Oap\FindingSubType.cs" />
+    <Compile Include="Oap\FindingType.cs" />
+    <Compile Include="Oap\Checklist\OapHierarchy.cs" />
+    <Compile Include="Oap\Rig.cs" />
+    <Compile Include="Security\Role.cs" />
+    <Compile Include="Security\Person.cs" />
+    <Compile Include="Security\PersonRole.cs" />
+    <Compile Include="Workflow\ApprovalRequest.cs" />
+    <Compile Include="Workflow\ApprovalTransition.cs" />
+    <Compile Include="Workflow\AssignmentRequest.cs" />
+    <Compile Include="Workflow\AssignmentTransition.cs" />
+    <Compile Include="Workflow\CancellationRequest.cs" />
+    <Compile Include="Workflow\CancellationTransition.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Workflow\SignRequest.cs" />
+    <Compile Include="Workflow\SignTransition.cs" />
+    <Compile Include="Workflow\Workflow.cs" />
+    <Compile Include="Workflow\WorkflowActivity.cs" />
+    <Compile Include="Workflow\WorkflowInstance.cs" />
+    <Compile Include="Workflow\PublishRequest.cs" />
+    <Compile Include="Workflow\PublishTransition.cs" />
+    <Compile Include="Workflow\ReceiveTransition.cs" />
+    <Compile Include="Workflow\RejectionRequest.cs" />
+    <Compile Include="Workflow\RejectionTransition.cs" />
+    <Compile Include="Workflow\WorkflowInstanceActivity.cs" />
+    <Compile Include="Workflow\WorkflowRequest.cs" />
+    <Compile Include="Workflow\WorkflowResult.cs" />
+    <Compile Include="Workflow\WorkflowState.cs" />
+    <Compile Include="Workflow\WorkflowTransition.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Interfaces\Domain\DomainInterfaces.csproj">
+      <Project>{09e11cbd-8342-4f87-847f-0e239656dca5}</Project>
+      <Name>DomainInterfaces</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
